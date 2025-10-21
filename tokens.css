@@ -1,0 +1,149 @@
+/* ============================================
+   Agora Design System - Shared Tokens
+   Article III: Single Canonical CSS Custom Properties File
+   ============================================ */
+
+/* Font Loading */
+@font-face {
+  font-family: 'Oregon LDO';
+  src: url('prototype/OregonLDO.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Design Tokens */
+:root {
+  /* ========================================
+     Color Palette - Grayscale Only
+     Article VII: Color Usage Patterns
+     ======================================== */
+  --color-black: #000000;
+  --color-white: #FFFFFF;
+  --color-gray-900: #1A1A1A;
+  --color-gray-800: #2d2d2d;
+  --color-gray-700: #404040;
+  --color-gray-600: #666666;
+  --color-gray-500: #808080;
+  --color-gray-400: #D4D4D4;
+  --color-gray-300: #E5E5E5;
+  --color-gray-200: #cccccc;
+  --color-gray-100: #F5F5F5;
+
+  /* Semantic Color Tokens */
+  --color-text-primary: var(--color-gray-900);
+  --color-text-secondary: var(--color-gray-600);
+  --color-text-muted: var(--color-gray-500);
+  --color-bg-primary: var(--color-white);
+  --color-bg-secondary: var(--color-gray-100);
+  --color-border: var(--color-gray-300);
+  --color-link: var(--color-gray-900);
+  --color-link-hover: var(--color-black);
+  --color-link-active: var(--color-black);
+
+  /* ========================================
+     Typography
+     Article V: Typography Consistency
+     ======================================== */
+
+  /* Font Families */
+  --font-family-heading: 'Oregon LDO', serif;
+  --font-family-base: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+
+  /* Font Sizes */
+  --font-size-heading-1: 48px;
+  --font-size-heading-2: 36px;
+  --font-size-heading-3: 24px;
+  --font-size-body: 16px;
+  --font-size-small: 14px;
+  --font-size-tiny: 12px;
+  --font-size-button: 16px;
+
+  /* Legacy font size scale (for backward compatibility with master site) */
+  --font-size-sm: 0.875rem;   /* 14px */
+  --font-size-base: 1rem;     /* 16px */
+  --font-size-lg: 1.125rem;   /* 18px */
+  --font-size-xl: 1.25rem;    /* 20px */
+  --font-size-2xl: 1.5rem;    /* 24px */
+  --font-size-3xl: 2rem;      /* 32px */
+  --font-size-4xl: 2.5rem;    /* 40px */
+  --font-size-5xl: 3rem;      /* 48px */
+
+  /* Font Weights */
+  --font-weight-regular: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+
+  /* Line Heights */
+  --line-height-tight: 1.2;
+  --line-height-normal: 1.6;
+  --line-height-relaxed: 1.6;
+
+  /* ========================================
+     Spacing
+     Article VI: Spacing and Rhythm (8px base unit)
+     ======================================== */
+  --space-xs: 0.5rem;   /* 8px */
+  --space-sm: 1rem;     /* 16px */
+  --space-md: 1.5rem;   /* 24px */
+  --space-lg: 2rem;     /* 32px */
+  --space-xl: 3rem;     /* 48px */
+  --space-2xl: 4rem;    /* 64px */
+  --space-3xl: 6rem;    /* 96px */
+
+  /* Prototype spacing tokens (for compatibility) */
+  --spacing-xs: 8px;
+  --spacing-sm: 16px;
+  --spacing-md: 24px;
+  --spacing-lg: 32px;
+  --spacing-xl: 48px;
+  --spacing-2xl: 64px;
+
+  /* Layout */
+  --max-width-content: 1200px;
+  --max-width-text: 700px;
+
+  /* ========================================
+     Border Radius
+     ======================================== */
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+
+  /* ========================================
+     Shadows
+     Article VIII: Shadows and Depth
+     ======================================== */
+  --shadow-subtle: 0 1px 3px rgba(0, 0, 0, 0.1);
+  --shadow-medium: 0 4px 12px rgba(0, 0, 0, 0.15);
+  --shadow-strong: 0 8px 24px rgba(0, 0, 0, 0.2);
+
+  /* Prototype shadow tokens (for compatibility) */
+  --shadow-subtle-prototype: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  --shadow-medium-prototype: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  --shadow-strong-prototype: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+
+  /* ========================================
+     Transitions
+     Article IX: Interaction and Animation
+     ======================================== */
+
+  /* Duration Tokens */
+  --duration-hover: 200ms;
+  --duration-click: 150ms;
+  --duration-page: 300ms;
+
+  /* Easing Tokens */
+  --easing-bidirectional: ease-in-out;
+  --easing-entrance: ease-out;
+  --easing-exit: ease-in;
+
+  /* Combined Transition Tokens (convenience) */
+  --transition-hover: var(--duration-hover) var(--easing-bidirectional);
+  --transition-click: var(--duration-click) var(--easing-bidirectional);
+  --transition-page: var(--duration-page) var(--easing-entrance);
+
+  /* Legacy transition (for backward compatibility) */
+  --transition-fast: 150ms ease-in-out;
+}

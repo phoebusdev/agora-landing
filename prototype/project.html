@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mobile-Responsive Dashboard - Agora</title>
+
+  <!-- Google Fonts - Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- Fixed Header -->
+  <header class="header">
+    <div class="header-inner">
+      <a href="index.html" class="logo">AGORA</a>
+      <nav class="header-nav">
+        <a href="sign-in.html">Sign In</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main class="main">
+    <div class="container" style="padding-top: var(--spacing-xl); padding-bottom: var(--spacing-2xl);">
+      <!-- Back Navigation -->
+      <div class="mb-md">
+        <a href="browse.html" style="font-size: var(--font-size-small);">← Back to Projects</a>
+      </div>
+
+      <!-- Project Header -->
+      <div class="mb-xl">
+        <div class="flex flex-between mb-sm" style="align-items: flex-start; gap: var(--spacing-md);">
+          <div style="flex: 1;">
+            <h1 class="mb-xs">Mobile-Responsive Dashboard with User Authentication</h1>
+            <p class="text-gray" style="font-size: 20px;">
+              Build a responsive dashboard that works across all devices with secure login.
+            </p>
+          </div>
+          <div style="text-align: right;">
+            <div style="font-size: 36px; font-weight: var(--font-weight-bold); margin-bottom: var(--spacing-xs);">$5,000</div>
+            <span class="badge badge-open">Open</span>
+          </div>
+        </div>
+
+        <!-- Meta Information -->
+        <div class="flex flex-gap-md" style="flex-wrap: wrap; font-size: var(--font-size-small); color: var(--color-gray-600);">
+          <span>Posted 2 days ago</span>
+          <span>•</span>
+          <span>3 clarifying questions</span>
+        </div>
+      </div>
+
+      <!-- Poster Info Card -->
+      <div class="card mb-lg" style="background-color: var(--color-gray-100);">
+        <div class="flex flex-between" style="align-items: center;">
+          <div>
+            <p class="mb-xs"><strong>Posted by</strong> <a href="profile.html">@poster_pro</a></p>
+            <p class="text-gray text-small" style="margin: 0;">
+              Acceptance Rate: <strong>85%</strong> · 12 projects posted · Member since Jan 2025
+            </p>
+          </div>
+          <a href="profile.html" class="btn btn-secondary">View full profile</a>
+        </div>
+      </div>
+
+      <!-- Detailed Specification -->
+      <div class="card mb-lg">
+        <h2 class="mb-md">Project Specification</h2>
+
+        <div class="mb-md">
+          <h3 class="mb-sm">Overview</h3>
+          <p class="text-gray mb-md">
+            Create a web-based dashboard application that provides a clean, professional interface for users
+            to view and manage their data. The dashboard must work seamlessly on mobile phones, tablets,
+            and desktop computers. Authentication is required before users can access any dashboard features.
+          </p>
+        </div>
+
+        <div class="mb-md">
+          <h3 class="mb-sm">Technical Requirements</h3>
+          <ul style="margin-left: var(--spacing-md); color: var(--color-gray-600); line-height: 1.8;">
+            <li>Use modern web technologies (React, Vue, or vanilla JavaScript acceptable)</li>
+            <li>Responsive design that adapts to screen sizes from 320px to 2560px wide</li>
+            <li>Secure authentication with password hashing (bcrypt or similar)</li>
+            <li>Session management with secure tokens</li>
+            <li>Clean, professional UI following modern design principles</li>
+            <li>No external UI frameworks required (Tailwind CSS or custom CSS both acceptable)</li>
+          </ul>
+        </div>
+
+        <div class="mb-md">
+          <h3 class="mb-sm">Core Features</h3>
+          <ul style="margin-left: var(--spacing-md); color: var(--color-gray-600); line-height: 1.8;">
+            <li><strong>User Registration:</strong> New users can create an account with email and password</li>
+            <li><strong>User Login:</strong> Existing users can sign in with their credentials</li>
+            <li><strong>Dashboard View:</strong> Authenticated users see a personalized dashboard with sample data</li>
+            <li><strong>Data Display:</strong> Dashboard shows at least 3 different types of data visualizations (tables, charts, or cards)</li>
+            <li><strong>Navigation:</strong> Clear navigation between dashboard sections</li>
+            <li><strong>Logout:</strong> Users can securely end their session</li>
+          </ul>
+        </div>
+
+        <div>
+          <h3 class="mb-sm">Deliverables</h3>
+          <ul style="margin-left: var(--spacing-md); color: var(--color-gray-600); line-height: 1.8;">
+            <li>Live demo URL (deployed on Vercel, Netlify, or similar)</li>
+            <li>Test credentials for demo access</li>
+            <li>Brief technical explanation (500 words max)</li>
+            <li>Note any deployment instructions if demo requires specific setup</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Acceptance Criteria -->
+      <div class="mb-lg">
+        <h2 class="mb-md">Acceptance Criteria</h2>
+        <p class="text-gray mb-md">
+          Your solution will be evaluated against these specific criteria. All must pass for acceptance.
+        </p>
+
+        <div class="flex-column flex-gap-sm">
+          <!-- Criterion 1 -->
+          <div class="card">
+            <strong class="mb-xs" style="display: block;">1. User can create an account with email and password</strong>
+            <p class="text-gray text-small" style="margin: 0;">
+              Registration form accepts email and password, validates format, stores securely,
+              and confirms account creation.
+            </p>
+          </div>
+
+          <!-- Criterion 2 -->
+          <div class="card">
+            <strong class="mb-xs" style="display: block;">2. User can sign in with valid credentials</strong>
+            <p class="text-gray text-small" style="margin: 0;">
+              Login form accepts credentials, validates against stored data, creates session,
+              and redirects to dashboard on success.
+            </p>
+          </div>
+
+          <!-- Criterion 3 -->
+          <div class="card">
+            <strong class="mb-xs" style="display: block;">3. Dashboard displays correctly on mobile (375px width)</strong>
+            <p class="text-gray text-small" style="margin: 0;">
+              All UI elements are visible, readable, and functional when browser is resized to 375px width.
+              No horizontal scrolling. Navigation works on touch devices.
+            </p>
+          </div>
+
+          <!-- Criterion 4 -->
+          <div class="card">
+            <strong class="mb-xs" style="display: block;">4. Dashboard displays correctly on desktop (1920px width)</strong>
+            <p class="text-gray text-small" style="margin: 0;">
+              Layout takes advantage of wider screen, proper spacing and sizing, no overly stretched elements.
+            </p>
+          </div>
+
+          <!-- Criterion 5 -->
+          <div class="card">
+            <strong class="mb-xs" style="display: block;">5. Dashboard shows at least 3 different data visualizations</strong>
+            <p class="text-gray text-small" style="margin: 0;">
+              Examples: data table, bar chart, stat cards, line graph. Sample data is acceptable.
+              Visualizations must be clearly labeled and functional.
+            </p>
+          </div>
+
+          <!-- Criterion 6 -->
+          <div class="card">
+            <strong class="mb-xs" style="display: block;">6. Unauthenticated users cannot access dashboard</strong>
+            <p class="text-gray text-small" style="margin: 0;">
+              Direct URL access to dashboard routes redirects to login. Session expiry is handled.
+              No protected data visible without authentication.
+            </p>
+          </div>
+
+          <!-- Criterion 7 -->
+          <div class="card">
+            <strong class="mb-xs" style="display: block;">7. User can log out and session is cleared</strong>
+            <p class="text-gray text-small" style="margin: 0;">
+              Logout button/link is visible in dashboard. Clicking it ends session and returns to login page.
+              Cannot access dashboard after logout without signing in again.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Clarifying Questions -->
+      <div class="card mb-xl">
+        <h3 class="mb-md">Clarifying Questions & Answers (3)</h3>
+
+        <div class="flex-column flex-gap-md">
+          <!-- Question 1 -->
+          <div style="padding-bottom: var(--spacing-md); border-bottom: 1px solid var(--color-gray-300);">
+            <p class="mb-xs">
+              <strong>@curious_builder</strong>
+              <span class="text-gray text-small">asked 1 day ago</span>
+            </p>
+            <p class="mb-sm text-gray">Should the dashboard support dark mode or is light mode sufficient?</p>
+            <div style="padding-left: var(--spacing-md); border-left: 2px solid var(--color-gray-300);">
+              <p class="mb-xs">
+                <strong>@poster_pro</strong>
+                <span class="text-gray text-small">answered 18 hours ago</span>
+              </p>
+              <p class="text-gray" style="margin: 0;">
+                Light mode only is fine for this project. Dark mode is not a requirement.
+              </p>
+            </div>
+          </div>
+
+          <!-- Question 2 -->
+          <div style="padding-bottom: var(--spacing-md); border-bottom: 1px solid var(--color-gray-300);">
+            <p class="mb-xs">
+              <strong>@dev_mike</strong>
+              <span class="text-gray text-small">asked 1 day ago</span>
+            </p>
+            <p class="mb-sm text-gray">
+              For the data visualizations, do you need real charts (with libraries like Chart.js) or are
+              styled HTML/CSS representations acceptable?
+            </p>
+            <div style="padding-left: var(--spacing-md); border-left: 2px solid var(--color-gray-300);">
+              <p class="mb-xs">
+                <strong>@poster_pro</strong>
+                <span class="text-gray text-small">answered 16 hours ago</span>
+              </p>
+              <p class="text-gray" style="margin: 0;">
+                Actual chart libraries preferred (Chart.js, Recharts, etc.) as they provide better interactivity.
+                But well-designed CSS representations are acceptable if they clearly communicate the data.
+              </p>
+            </div>
+          </div>
+
+          <!-- Question 3 -->
+          <div>
+            <p class="mb-xs">
+              <strong>@builder_elite</strong>
+              <span class="text-gray text-small">asked 2 days ago</span>
+            </p>
+            <p class="mb-sm text-gray">
+              Does the backend need to persist to a real database or is in-memory storage (session/local) acceptable?
+            </p>
+            <div style="padding-left: var(--spacing-md); border-left: 2px solid var(--color-gray-300);">
+              <p class="mb-xs">
+                <strong>@poster_pro</strong>
+                <span class="text-gray text-small">answered 2 days ago</span>
+              </p>
+              <p class="text-gray" style="margin: 0;">
+                In-memory storage is fine for the demo. I understand data will be lost on server restart.
+                The focus is on the authentication flow and responsive UI, not production persistence.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="mt-md pt-md" style="border-top: 1px solid var(--color-gray-300);">
+          <a href="clarify.html" class="btn btn-secondary">Ask a Clarifying Question</a>
+        </div>
+      </div>
+
+      <!-- Submit CTA -->
+      <div class="text-center">
+        <a href="submit.html" class="btn btn-primary submit-solution-btn" style="padding: 18px 48px; font-size: 18px;">
+          Submit Your Solution
+        </a>
+        <p class="text-gray mt-md">
+          Payment of $5,000 is escrowed and will be released when your solution meets all criteria.
+        </p>
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <p>&copy; 2025 Agora. Building infrastructure for merit-based work.</p>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="scripts.js"></script>
+</body>
+</html>

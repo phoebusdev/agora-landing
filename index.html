@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Agora - Direct Capability Evaluation Platform for skill assessment without proxy-based credentials">
+  <title>Agora – Direct Capability Evaluation Platform</title>
+
+  <!-- Critical CSS inline (hero + navigation) -->
+  <style>
+    :root{--color-black:#000;--color-gray-900:#1a1a1a;--color-gray-600:#666;--color-gray-300:#b3b3b3;--color-gray-100:#e6e6e6;--color-white:#fff;--color-text-primary:var(--color-gray-900);--color-text-secondary:var(--color-gray-600);--color-bg-primary:var(--color-white);--color-bg-secondary:var(--color-gray-100);--color-border:var(--color-gray-300);--space-sm:1rem;--space-md:1.5rem;--space-lg:2rem;--space-xl:3rem;--space-3xl:6rem;--font-sans:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif}*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}html{font-size:16px;scroll-behavior:smooth}body{font-family:var(--font-sans);font-size:1rem;line-height:1.6;color:var(--color-text-primary);background-color:var(--color-bg-primary);-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}header{padding:var(--space-lg) var(--space-md);text-align:center;border-bottom:1px solid var(--color-border)}nav{position:sticky;top:0;background-color:var(--color-bg-primary);border-bottom:1px solid var(--color-border);z-index:100;padding:var(--space-sm) var(--space-md)}nav ul{display:flex;justify-content:center;gap:var(--space-md);list-style:none;flex-wrap:wrap}nav a{text-decoration:none;padding:var(--space-sm);color:var(--color-text-primary);border-radius:4px;transition:background-color 150ms}nav a:hover{background-color:var(--color-bg-secondary)}nav a.active{font-weight:700;background-color:var(--color-gray-200)}
+  </style>
+
+  <!-- Full stylesheet async load -->
+  <link rel="stylesheet" href="styles.css" media="print" onload="this.media='all'">
+  <noscript><link rel="stylesheet" href="styles.css"></noscript>
+</head>
+<body>
+  <header>
+    <h1>Agora</h1>
+    <p class="tagline">Direct Capability Evaluation Platform</p>
+  </header>
+
+  <nav aria-label="Main navigation">
+    <ul>
+      <li><a href="#problem" class="nav-link" data-section="problem">Problem</a></li>
+      <li><a href="#solution" class="nav-link" data-section="solution">Solution</a></li>
+      <li><a href="#prototype" class="nav-link" data-section="prototype">Prototype</a></li>
+      <li><a href="#feasibility" class="nav-link" data-section="feasibility">Feasibility</a></li>
+      <li><a href="#roadmap" class="nav-link" data-section="roadmap">Roadmap</a></li>
+    </ul>
+  </nav>
+
+  <main>
+    <section id="hero" aria-labelledby="hero-heading">
+      <h2 id="hero-heading" class="visually-hidden">Introduction</h2>
+      <div class="content-block type-text" style="text-align: center; max-width: 800px; margin: 0 auto;">
+        <p style="font-size: 1.5rem; font-weight: 600; margin-bottom: 1rem;">What if evaluation happened at the right abstraction level?</p>
+        <p style="font-size: 1.125rem; color: var(--color-text-secondary);">Traditional hiring evaluates credentials before capability. Agora reverses this—capability proves itself directly through verified work.</p>
+      </div>
+    </section>
+
+    <section id="problem" aria-labelledby="problem-heading">
+      <h2 id="problem-heading">The Problem</h2>
+
+      <div class="content-block type-text">
+        <p>The hiring process is fundamentally inefficient. Traditional evaluation judges candidates by <strong>proxies</strong>—degrees, years of experience, resume keywords—rather than by actual capability to perform the work.</p>
+
+        <p>This proxy-based evaluation creates friction for all parties:</p>
+
+        <ul>
+          <li><strong>Job seekers</strong> spend years accumulating credentials that may or may not predict job performance</li>
+          <li><strong>Employers</strong> filter through hundreds of resumes trying to infer capability from indirect signals</li>
+          <li><strong>Society</strong> invests massive resources in credentialing systems that serve as gatekeepers rather than capability validators</li>
+        </ul>
+
+        <p>The core inefficiency: <strong>evaluation happens at the wrong abstraction level</strong>. We evaluate credentials (the proxy) instead of capability (the actual attribute we care about).</p>
+      </div>
+
+      <div class="content-block type-comparison">
+        <div class="comparison-column">
+          <h3>Traditional Evaluation</h3>
+          <p><strong>Proxy-Based Assessment</strong></p>
+          <ul>
+            <li>Review degrees and certifications</li>
+            <li>Count years of experience</li>
+            <li>Screen for resume keywords</li>
+            <li>Conduct behavioral interviews</li>
+            <li>Hope proxies predict capability</li>
+          </ul>
+          <p style="margin-top: var(--space-md); color: var(--color-text-secondary);"><em>Problem: Proxies are expensive to acquire and weak predictors of actual performance</em></p>
+        </div>
+
+        <div class="comparison-column">
+          <h3>Direct Evaluation</h3>
+          <p><strong>Capability-Based Assessment</strong></p>
+          <ul>
+            <li>Post clear specification of work</li>
+            <li>Candidate completes actual task</li>
+            <li>Work delivered and verified</li>
+            <li>Payment released via escrow</li>
+            <li>Capability proven, not inferred</li>
+          </ul>
+          <p style="margin-top: var(--space-md); color: var(--color-text-secondary);"><em>Solution: Direct evaluation removes the proxy layer entirely</em></p>
+        </div>
+      </div>
+
+      <div class="content-block type-text">
+        <p><strong>Why does this matter?</strong> When evaluation happens at the proxy level, everyone loses. Job seekers waste time on credentials that don't guarantee jobs. Employers waste time screening credentials that don't guarantee performance. The mismatch creates a massive inefficiency in how labor markets match supply and demand.</p>
+
+        <p>Agora proposes a radical simplification: <strong>evaluate capability directly through verified work completion</strong>, eliminating the proxy layer that creates all this friction.</p>
+      </div>
+    </section>
+
+    <section id="solution" aria-labelledby="solution-heading">
+      <h2 id="solution-heading">The Solution</h2>
+
+      <div class="content-block type-text">
+        <p>Agora's architecture enforces capability-first evaluation through four core principles. These aren't features you can toggle—they're architectural constraints that make proxy-based evaluation structurally impossible.</p>
+      </div>
+
+      <div class="content-block type-text">
+        <h3>1. Anonymity by Default</h3>
+        <p>Profiles display only verified transaction history and public work samples. No names, no photos, no degrees, no years of experience. This isn't a privacy feature—it's an enforcement mechanism. Without identity data, employers <em>cannot</em> evaluate based on proxies. They must evaluate based on demonstrated capability.</p>
+
+        <p><strong>Why it's necessary</strong>: As long as credential data is available, rational employers will use it as a filter. Anonymity removes the option to filter by credentials, forcing evaluation to focus on actual work quality.</p>
+      </div>
+
+      <div class="content-block type-text">
+        <h3>2. Escrow Protection</h3>
+        <p>Payment is locked in cryptographic escrow before work begins. The poster cannot refuse payment without cryptographic proof of contract violation. The worker cannot abandon work without forfeiting reputation. This creates <strong>cryptographic trust</strong> that replaces identity-based trust.</p>
+
+        <p><strong>Why it's necessary</strong>: Traditional hiring relies on institutional trust (companies won't ghost you, employees won't steal). Agora needs to work without that institutional layer, so trust is enforced cryptographically through escrow and public transaction history.</p>
+      </div>
+
+      <div class="content-block type-text">
+        <h3>3. Public Transaction History</h3>
+        <p>Every completed project is recorded permanently: specification, delivery artifacts, dispute resolution (if any). This verified history is more trustworthy than a resume claiming "3 years of Python experience" because <strong>delivery is verifiable, claims are not</strong>.</p>
+
+        <p><strong>Why it's necessary</strong>: Credentials are self-reported and unverified. Transaction history is cryptographically signed and publicly auditable. The difference is verification: you can inspect the actual work someone delivered, not just read what they claim to have done.</p>
+      </div>
+
+      <div class="content-block type-text">
+        <h3>4. Specification Discipline</h3>
+        <p>Projects require clear acceptance criteria before posting. Disputes are resolved by checking delivery against the original specification. This prevents subjective rejection ("we just didn't like it") and forces both parties to agree on <strong>objective success criteria</strong> upfront.</p>
+
+        <p><strong>Why it's necessary</strong>: Without objective criteria, evaluation becomes subjective, which creates an opening for proxy-based bias to creep back in. Clear specifications ensure that work is judged by whether it meets defined criteria, not by who did it.</p>
+      </div>
+
+      <div class="content-block type-text">
+        <p style="margin-top: var(--space-xl); padding: var(--space-lg); background-color: var(--color-bg-secondary); border-left: 4px solid var(--color-gray-600); border-radius: var(--radius-sm);"><strong>Architectural Constraints, Not Optional Policies</strong><br><br>These four principles aren't features users can disable. They're structural requirements. You cannot post a project without a specification. You cannot pay without escrow. You cannot see credentials because they don't exist in the system. Agora doesn't ask people to be less biased—it removes the information that enables bias.</p>
+      </div>
+    </section>
+
+    <section id="prototype" aria-labelledby="prototype-heading">
+      <h2 id="prototype-heading">Interactive Prototype</h2>
+
+      <div class="content-block type-text">
+        <p>The prototype below demonstrates how these architectural principles manifest in actual interface design. You can browse posted projects, view specifications with clear acceptance criteria, and explore how reputation builds through verified transaction history—all without seeing credentials.</p>
+
+        <p>Explore the prototype embedded below, or <a href="https://agora-six.vercel.app" target="_blank" rel="noopener noreferrer">open it in a new window</a> for the full experience.</p>
+
+        <p><strong>Suggested exploration path</strong>:</p>
+        <ol>
+          <li>Browse the twelve posted projects on the landing page</li>
+          <li>Click into a project detail to see complete specifications with acceptance criteria</li>
+          <li>View a poster profile to see transaction history without credentials</li>
+          <li>Explore the clarification forum to see how specifications evolve through public Q&A</li>
+          <li>Click the logo within the prototype to return to this explanatory site</li>
+        </ol>
+
+        <p style="color: var(--color-text-secondary); font-size: var(--font-size-sm); margin-top: var(--space-md);"><em>Note: This is a static prototype demonstrating interface and information architecture. The actual platform would include backend functionality for escrow, cryptographic signing, and transaction recording.</em></p>
+      </div>
+
+      <div class="iframe-container">
+        <a href="https://agora-six.vercel.app" target="_blank" rel="noopener noreferrer" class="prototype-popout-button" aria-label="Open prototype in new window">
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <path d="M11 3H13V5M13 3L8 8M13 3V8M13 11V13H3V3H8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          <span>Open in new window</span>
+        </a>
+        <iframe
+          src="/prototype/index.html"
+          sandbox="allow-same-origin allow-scripts allow-forms allow-popups"
+          loading="lazy"
+          title="Agora Prototype Interactive Demo"
+          width="100%"
+          height="600"
+        ></iframe>
+      </div>
+    </section>
+
+    <section id="feasibility" aria-labelledby="feasibility-heading">
+      <h2 id="feasibility-heading">Feasibility</h2>
+
+      <div class="content-block type-text">
+        <p>Building Agora requires solving four major technical challenges. This section addresses each challenge directly, explaining the tradeoffs and why reasonable approaches exist despite implementation uncertainty.</p>
+      </div>
+
+      <div class="content-block type-text">
+        <h3>1. Payment Architecture</h3>
+        <p><strong>The Challenge</strong>: Escrow requires holding funds securely and releasing them based on contract fulfillment. Traditional approaches use centralized payment processors (Stripe, PayPal) which add friction and fees. Blockchain smart contracts offer trustless escrow but introduce complexity and gas fees.</p>
+
+        <p><strong>The Approach</strong>: Start with centralized escrow (Stripe Connect or similar) for MVP simplicity, with architecture designed to support smart contract migration later. The key insight: <em>the escrow mechanism is implementation-agnostic</em>. Whether funds are held by Stripe or an Ethereum smart contract, the user experience is identical—poster deposits funds, worker completes work, funds release upon acceptance.</p>
+
+        <p><strong>Tradeoff</strong>: Centralized escrow requires trusting the platform operator initially. This is acceptable for MVP validation (50-100 early adopters) but would require decentralization for scale. The architecture supports this migration path.</p>
+      </div>
+
+      <div class="content-block type-text">
+        <h3>2. Cold Start Problem</h3>
+        <p><strong>The Challenge</strong>: Marketplaces need both supply (workers) and demand (projects) to function. Without projects, workers won't join. Without workers, posters won't create projects.</p>
+
+        <p><strong>The Approach</strong>: Multiple viable strategies exist:</p>
+        <ul>
+          <li><strong>Seed content</strong>: Founder posts 10-20 real projects with actual payment to demonstrate platform viability and create initial transaction history</li>
+          <li><strong>Single community focus</strong>: Launch within a specific technical community (e.g., Rust developers, technical writers) where both supply and demand exist</li>
+          <li><strong>Worker-first</strong>: Build portfolio/reputation tools first, let workers create profiles before projects exist, then recruit posters to this pre-qualified pool</li>
+        </ul>
+
+        <p><strong>Assessment</strong>: The cold start problem is real but not unique. Every marketplace solves this. The anonymity constraint actually <em>helps</em> here—workers can build reputation without revealing identity, lowering the barrier to creating profiles.</p>
+      </div>
+
+      <div class="content-block type-text">
+        <h3>3. Moderation and Abuse</h3>
+        <p><strong>The Challenge</strong>: Anonymous platforms enable abuse (spam, fraud, harassment) since users can create unlimited sockpuppet accounts. Traditional solutions rely on identity verification, which contradicts Agora's anonymity principle.</p>
+
+        <p><strong>The Approach</strong>: Algorithmic reputation combined with economic disincentives:</p>
+        <ul>
+          <li><strong>Deposit requirements</strong>: New accounts must complete small paid tasks before posting projects (skin in the game)</li>
+          <li><strong>Transaction history</strong>: Accounts with zero completions have lower visibility than accounts with verified work</li>
+          <li><strong>Dispute resolution</strong>: Public arbitration with both parties' transaction histories visible to adjudicators</li>
+          <li><strong>Human intervention</strong>: When algorithmic signals flag potential abuse, human moderators review (without seeing identity)</li>
+        </ul>
+
+        <p><strong>Tension</strong>: Pure algorithmic governance is appealing but insufficient. Some human judgment is necessary for edge cases. The key is ensuring moderators make decisions based on <em>behavior patterns</em> (repeated disputes, specification gaming) rather than identity attributes.</p>
+      </div>
+
+      <div class="content-block type-text">
+        <h3>4. Legal and Regulatory</h3>
+        <p><strong>The Challenge</strong>: Platforms facilitating paid work face employment law questions (contractor vs employee classification), payment regulations (money transmission licenses), and tax reporting requirements (1099 forms in US).</p>
+
+        <p><strong>The Approach</strong>: Structure as marketplace, not employer:</p>
+        <ul>
+          <li><strong>Contractor model</strong>: All work is project-based with clear specifications, making worker classification clearer (though not eliminating risk)</li>
+          <li><strong>Payment processor partnership</strong>: Use existing licensed processors (Stripe) rather than becoming a money transmitter</li>
+          <li><strong>Tax jurisdiction</strong>: Start in favorable jurisdictions (Delaware C-corp for US operations) with counsel specialized in gig economy platforms</li>
+          <li><strong>Compliance-first design</strong>: Build audit trails, transaction records, and dispute documentation from day one</li>
+        </ul>
+
+        <p><strong>Reality Check</strong>: Legal risk cannot be eliminated, only managed. Upwork, Fiverr, and Toptal all navigate these issues. Agora's anonymity adds complexity but doesn't create fundamentally new legal questions—it's still a marketplace connecting clients with contractors.</p>
+      </div>
+
+      <div class="content-block type-text">
+        <p style="margin-top: var(--space-xl); padding: var(--space-lg); background-color: var(--color-bg-secondary); border-left: 4px solid var(--color-gray-600); border-radius: var(--radius-sm);"><strong>Confidence in Architecture, Uncertainty in Implementation</strong><br><br>These challenges are real and non-trivial. But none are fundamental blockers—they're implementation details that require careful engineering and legal counsel. The core architectural insight (evaluate capability directly, remove proxy data) remains sound regardless of how escrow is implemented or how the cold start problem is solved. Agora isn't betting that these problems are easy. It's betting that they're solvable given the efficiency gains from eliminating the proxy layer.</p>
+      </div>
+    </section>
+
+    <section id="roadmap" aria-labelledby="roadmap-heading">
+      <h2 id="roadmap-heading">Roadmap</h2>
+
+      <div class="content-block type-text">
+        <h3>MVP Scope (6 Months)</h3>
+        <p><strong>What's Included</strong>:</p>
+        <ul>
+          <li><strong>Core posting flow</strong>: Create project with specification, acceptance criteria, payment amount, deadline</li>
+          <li><strong>Core worker flow</strong>: Browse projects, submit work, receive payment via escrow</li>
+          <li><strong>Anonymous profiles</strong>: Transaction history visible, credentials hidden</li>
+          <li><strong>Basic escrow</strong>: Centralized (Stripe Connect), funds released on acceptance or after dispute resolution</li>
+          <li><strong>Specification evolution</strong>: Public Q&A forum for clarifying requirements before acceptance</li>
+          <li><strong>Simple reputation</strong>: Count of completed projects, dispute rate, average project value</li>
+        </ul>
+
+        <p><strong>What's Excluded</strong> (explicitly punted to post-MVP):</p>
+        <ul>
+          <li>Smart contract escrow (use centralized)</li>
+          <li>Advanced reputation algorithms (use simple counts)</li>
+          <li>Mobile apps (web-only)</li>
+          <li>Team/organization accounts (individual only)</li>
+          <li>Recurring contracts (one-time projects only)</li>
+          <li>Messaging (public forum only, no private DMs)</li>
+        </ul>
+
+        <p><strong>Target</strong>: 10 posted projects with 5+ completions within 6 months. This validates that real work can happen on the platform and real reputation can accumulate.</p>
+      </div>
+
+      <div class="content-block type-text">
+        <h3>Success Metrics</h3>
+        <p>MVP is considered successful if:</p>
+        <ul>
+          <li><strong>10+ projects posted</strong> with real payment (not test transactions)</li>
+          <li><strong>5+ projects completed</strong> with work delivered and payment released</li>
+          <li><strong>Zero disputes escalated</strong> beyond platform arbitration (early signal of specification quality)</li>
+          <li><strong>3+ workers with 2+ completions</strong> (reputation is accumulating)</li>
+          <li><strong>Poster repeat rate >30%</strong> (posters return to create second project)</li>
+        </ul>
+
+        <p>These metrics validate the core hypothesis: <strong>capability-based evaluation via verified work completion is viable</strong>. If projects are posted, work is completed, and reputation accumulates, the fundamental mechanism works.</p>
+      </div>
+
+      <div class="content-block type-text">
+        <h3>Future Vision (Post-MVP)</h3>
+        <p><strong>If MVP succeeds</strong>, potential expansions include:</p>
+        <ul>
+          <li><strong>Smart contract escrow</strong>: Migrate to Ethereum/Polygon for trustless payments (contingent on gas fees being acceptable)</li>
+          <li><strong>Reputation algorithms</strong>: Weight completions by project complexity, adjust for dispute resolution outcomes, factor in specification quality</li>
+          <li><strong>Category expansion</strong>: Beyond software development to design, writing, research, data analysis</li>
+          <li><strong>Team contracts</strong>: Allow multiple workers to collaborate on larger projects</li>
+          <li><strong>Recurring relationships</strong>: Workers can accept ongoing retainer arrangements with posters they've worked with successfully</li>
+        </ul>
+
+        <p><strong>Critical constraint</strong>: All expansions must preserve the core architectural principles (anonymity, escrow, transaction history, specification discipline). Features that reintroduce proxy-based evaluation are rejected regardless of user demand.</p>
+      </div>
+
+      <div class="content-block type-text">
+        <h3>Resource Requirements</h3>
+        <p><strong>Technical Cofounder Needed</strong>:</p>
+        <ul>
+          <li><strong>Skills</strong>: Full-stack web development (backend + frontend), payment integration experience, database design</li>
+          <li><strong>Commitment</strong>: 6-month MVP build, part-time (20hrs/week) acceptable initially</li>
+          <li><strong>Equity</strong>: 30-40% cofounder stake, vesting over 4 years</li>
+        </ul>
+
+        <p><strong>Funding</strong>: Fellowship support ($100k) covers 6-month runway for two founders. Additional seed funding ($300k-500k) would accelerate timeline but not required for MVP validation.</p>
+      </div>
+
+      <div class="content-block type-text">
+        <p style="margin-top: var(--space-xl); padding: var(--space-xl); background-color: var(--color-gray-900); color: var(--color-white); border-radius: var(--radius-md); text-align: center;">
+          <strong style="font-size: var(--font-size-2xl); display: block; margin-bottom: var(--space-md);">The Core Efficiency Argument</strong>
+          <span style="font-size: var(--font-size-lg); line-height: 1.8;">Evaluation at the proxy level (credentials) is expensive to produce and weak at predicting capability. Evaluation at the capability level (verified work) is expensive to fake and strong at predicting capability. This efficiency difference—lower cost to prove, higher confidence in result—is why Agora can work.</span>
+        </p>
+      </div>
+
+      <div class="content-block type-text" style="text-align: center; margin-top: var(--space-2xl);">
+        <p style="color: var(--color-text-secondary);">Questions or interest in contributing? This is a fellowship application demonstrating architectural thinking and execution capability. The prototype above is fully functional as a static demonstration.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Agora Platform. All rights reserved.</p>
+  </footer>
+
+  <script src="script.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Clarification Forum - Agora</title>
+
+  <!-- Google Fonts - Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- Fixed Header -->
+  <header class="header">
+    <div class="header-inner">
+      <a href="index.html" class="logo">AGORA</a>
+      <nav class="header-nav">
+        <a href="sign-in.html">Sign In</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main class="main">
+    <div class="container-wide" style="padding-top: var(--spacing-xl); padding-bottom: var(--spacing-2xl);">
+      <!-- Page Header -->
+      <div class="mb-lg">
+        <h1 class="mb-sm">Clarification Forum</h1>
+        <p class="text-gray">
+          Public forum where builders ask questions and posters clarify project specifications.
+          Transparent communication reduces disputes and improves outcomes.
+        </p>
+      </div>
+
+      <!-- Filter -->
+      <div class="card mb-lg" style="padding: var(--spacing-md);">
+        <div class="flex flex-gap-md" style="align-items: center;">
+          <label for="filter-questions" class="text-small" style="white-space: nowrap;">Show:</label>
+          <select id="filter-questions" class="form-select" style="max-width: 300px;">
+            <option value="all">All Projects</option>
+            <option value="unanswered">Only Unanswered Questions</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- Projects with Questions -->
+      <div class="flex-column flex-gap-lg">
+        <!-- Project 1 -->
+        <div class="project-with-questions">
+          <div class="card">
+            <!-- Project Header -->
+            <div class="mb-md">
+              <div class="flex flex-between mb-sm" style="align-items: flex-start; gap: var(--spacing-md);">
+                <div style="flex: 1;">
+                  <h2 class="mb-xs" style="font-size: 20px;">
+                    <a href="project.html">Mobile-Responsive Dashboard with User Authentication</a>
+                  </h2>
+                  <p class="text-gray text-small" style="margin: 0;">
+                    Posted by <strong>@poster_pro</strong> · 2 days ago · Payment: <strong>$5,000</strong>
+                  </p>
+                </div>
+                <span class="badge badge-open">3 Questions</span>
+              </div>
+              <button class="btn btn-secondary toggle-questions">Show Questions</button>
+            </div>
+
+            <!-- Questions List (initially hidden) -->
+            <div class="questions-list hidden">
+              <div style="border-top: 1px solid var(--color-gray-300); padding-top: var(--spacing-md);">
+                <h3 class="mb-md">Questions & Answers</h3>
+
+                <div class="flex-column flex-gap-md">
+                  <!-- Question 1 -->
+                  <div class="card" style="background-color: var(--color-gray-100);">
+                    <p class="mb-xs">
+                      <strong>@curious_builder</strong>
+                      <span class="text-gray text-small">asked 1 day ago</span>
+                    </p>
+                    <p class="mb-sm text-gray">Should the dashboard support dark mode or is light mode sufficient?</p>
+                    <div style="padding-left: var(--spacing-md); border-left: 2px solid var(--color-black);">
+                      <p class="mb-xs">
+                        <strong>@poster_pro</strong>
+                        <span class="text-gray text-small">answered 18 hours ago</span>
+                      </p>
+                      <p class="text-gray" style="margin: 0;">
+                        Light mode only is fine for this project. Dark mode is not a requirement.
+                      </p>
+                    </div>
+                  </div>
+
+                  <!-- Question 2 -->
+                  <div class="card" style="background-color: var(--color-gray-100);">
+                    <p class="mb-xs">
+                      <strong>@dev_mike</strong>
+                      <span class="text-gray text-small">asked 1 day ago</span>
+                    </p>
+                    <p class="mb-sm text-gray">
+                      For the data visualizations, do you need real charts (with libraries like Chart.js) or are
+                      styled HTML/CSS representations acceptable?
+                    </p>
+                    <div style="padding-left: var(--spacing-md); border-left: 2px solid var(--color-black);">
+                      <p class="mb-xs">
+                        <strong>@poster_pro</strong>
+                        <span class="text-gray text-small">answered 16 hours ago</span>
+                      </p>
+                      <p class="text-gray" style="margin: 0;">
+                        Actual chart libraries preferred (Chart.js, Recharts, etc.) as they provide better interactivity.
+                        But well-designed CSS representations are acceptable if they clearly communicate the data.
+                      </p>
+                    </div>
+                  </div>
+
+                  <!-- Question 3 -->
+                  <div class="card" style="background-color: var(--color-gray-100);">
+                    <p class="mb-xs">
+                      <strong>@builder_elite</strong>
+                      <span class="text-gray text-small">asked 2 days ago</span>
+                    </p>
+                    <p class="mb-sm text-gray">
+                      Does the backend need to persist to a real database or is in-memory storage (session/local) acceptable?
+                    </p>
+                    <div style="padding-left: var(--spacing-md); border-left: 2px solid var(--color-black);">
+                      <p class="mb-xs">
+                        <strong>@poster_pro</strong>
+                        <span class="text-gray text-small">answered 2 days ago</span>
+                      </p>
+                      <p class="text-gray" style="margin: 0;">
+                        In-memory storage is fine for the demo. I understand data will be lost on server restart.
+                        The focus is on the authentication flow and responsive UI, not production persistence.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Ask Question Button (shown if signed in and not the poster) -->
+                <div class="mt-md">
+                  <button class="btn btn-primary ask-question-btn">Ask Clarifying Question</button>
+
+                  <!-- Question Form (hidden by default) -->
+                  <div class="question-form hidden mt-md">
+                    <textarea
+                      class="form-textarea mb-sm"
+                      rows="4"
+                      placeholder="Ask a specific question about the project specification..."
+                    ></textarea>
+                    <div class="btn-group">
+                      <button class="btn btn-primary submit-question">Submit Question</button>
+                      <button class="btn btn-secondary cancel-question">Cancel</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 2 -->
+        <div class="project-with-questions">
+          <div class="card">
+            <!-- Project Header -->
+            <div class="mb-md">
+              <div class="flex flex-between mb-sm" style="align-items: flex-start; gap: var(--spacing-md);">
+                <div style="flex: 1;">
+                  <h2 class="mb-xs" style="font-size: 20px;">
+                    <a href="project.html">E-commerce Checkout Flow with Payment Integration</a>
+                  </h2>
+                  <p class="text-gray text-small" style="margin: 0;">
+                    Posted by <strong>@shop_owner</strong> · 4 days ago · Payment: <strong>$8,500</strong>
+                  </p>
+                </div>
+                <span class="badge badge-open">5 Questions</span>
+              </div>
+              <button class="btn btn-secondary toggle-questions">Show Questions</button>
+            </div>
+
+            <!-- Questions List (initially hidden) -->
+            <div class="questions-list hidden">
+              <div style="border-top: 1px solid var(--color-gray-300); padding-top: var(--spacing-md);">
+                <h3 class="mb-md">Questions & Answers</h3>
+
+                <div class="flex-column flex-gap-md">
+                  <!-- Question 1 -->
+                  <div class="card" style="background-color: var(--color-gray-100);">
+                    <p class="mb-xs">
+                      <strong>@payment_expert</strong>
+                      <span class="text-gray text-small">asked 3 days ago</span>
+                    </p>
+                    <p class="mb-sm text-gray">Which payment methods need to be supported (credit card, PayPal, Apple Pay)?</p>
+                    <div style="padding-left: var(--spacing-md); border-left: 2px solid var(--color-black);">
+                      <p class="mb-xs">
+                        <strong>@shop_owner</strong>
+                        <span class="text-gray text-small">answered 3 days ago</span>
+                      </p>
+                      <p class="text-gray" style="margin: 0;">
+                        Credit card via Stripe is sufficient. No need for PayPal or Apple Pay in this version.
+                      </p>
+                    </div>
+                  </div>
+
+                  <!-- Question 2 -->
+                  <div class="card" style="background-color: var(--color-gray-100);">
+                    <p class="mb-xs">
+                      <strong>@frontend_dev</strong>
+                      <span class="text-gray text-small">asked 4 days ago</span>
+                    </p>
+                    <p class="mb-sm text-gray">Should the cart persist across sessions (local storage) or only during the session?</p>
+                    <div style="padding-left: var(--spacing-md); border-left: 2px solid var(--color-black);">
+                      <p class="mb-xs">
+                        <strong>@shop_owner</strong>
+                        <span class="text-gray text-small">answered 4 days ago</span>
+                      </p>
+                      <p class="text-gray" style="margin: 0;">
+                        Cart should persist across sessions using local storage. Users should see their cart items even after closing the browser.
+                      </p>
+                    </div>
+                  </div>
+
+                  <!-- Unanswered Question -->
+                  <div class="card" style="background-color: var(--color-gray-100); border-left: 3px solid var(--color-black);">
+                    <p class="mb-xs">
+                      <strong>@security_minded</strong>
+                      <span class="text-gray text-small">asked 2 days ago</span>
+                      <span class="badge badge-pending ml-sm">Unanswered</span>
+                    </p>
+                    <p class="text-gray" style="margin: 0;">
+                      Should we implement rate limiting for checkout attempts to prevent abuse?
+                    </p>
+                  </div>
+
+                  <!-- Question 4 -->
+                  <div class="card" style="background-color: var(--color-gray-100);">
+                    <p class="mb-xs">
+                      <strong>@ux_builder</strong>
+                      <span class="text-gray text-small">asked 4 days ago</span>
+                    </p>
+                    <p class="mb-sm text-gray">Do you have specific design preferences (e.g., color scheme, layout style)?</p>
+                    <div style="padding-left: var(--spacing-md); border-left: 2px solid var(--color-black);">
+                      <p class="mb-xs">
+                        <strong>@shop_owner</strong>
+                        <span class="text-gray text-small">answered 3 days ago</span>
+                      </p>
+                      <p class="text-gray" style="margin: 0;">
+                        Clean and professional. Use a neutral color palette. Mobile-first design is important. No specific brand colors required.
+                      </p>
+                    </div>
+                  </div>
+
+                  <!-- Question 5 -->
+                  <div class="card" style="background-color: var(--color-gray-100);">
+                    <p class="mb-xs">
+                      <strong>@builder_elite</strong>
+                      <span class="text-gray text-small">asked 4 days ago</span>
+                    </p>
+                    <p class="mb-sm text-gray">What should happen if a payment fails (network error, declined card)?</p>
+                    <div style="padding-left: var(--spacing-md); border-left: 2px solid var(--color-black);">
+                      <p class="mb-xs">
+                        <strong>@shop_owner</strong>
+                        <span class="text-gray text-small">answered 4 days ago</span>
+                      </p>
+                      <p class="text-gray" style="margin: 0;">
+                        Show clear error message to user and allow them to retry. Cart should remain intact. Log the error for debugging.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Ask Question Button -->
+                <div class="mt-md">
+                  <button class="btn btn-primary ask-question-btn">Ask Clarifying Question</button>
+
+                  <!-- Question Form (hidden by default) -->
+                  <div class="question-form hidden mt-md">
+                    <textarea
+                      class="form-textarea mb-sm"
+                      rows="4"
+                      placeholder="Ask a specific question about the project specification..."
+                    ></textarea>
+                    <div class="btn-group">
+                      <button class="btn btn-primary submit-question">Submit Question</button>
+                      <button class="btn btn-secondary cancel-question">Cancel</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 3 -->
+        <div class="project-with-questions">
+          <div class="card">
+            <!-- Project Header -->
+            <div class="mb-md">
+              <div class="flex flex-between mb-sm" style="align-items: flex-start; gap: var(--spacing-md);">
+                <div style="flex: 1;">
+                  <h2 class="mb-xs" style="font-size: 20px;">
+                    <a href="project.html">Real-time Chat Application with WebSocket Support</a>
+                  </h2>
+                  <p class="text-gray text-small" style="margin: 0;">
+                    Posted by <strong>@startup_cto</strong> · 6 days ago · Payment: <strong>$9,000</strong>
+                  </p>
+                </div>
+                <span class="badge badge-open">8 Questions</span>
+              </div>
+              <button class="btn btn-secondary toggle-questions">Show Questions</button>
+            </div>
+
+            <!-- Questions List (initially hidden) -->
+            <div class="questions-list hidden">
+              <div style="border-top: 1px solid var(--color-gray-300); padding-top: var(--spacing-md);">
+                <h3 class="mb-md">Questions & Answers</h3>
+
+                <div class="flex-column flex-gap-md">
+                  <!-- Question 1 -->
+                  <div class="card" style="background-color: var(--color-gray-100);">
+                    <p class="mb-xs">
+                      <strong>@realtime_dev</strong>
+                      <span class="text-gray text-small">asked 5 days ago</span>
+                    </p>
+                    <p class="mb-sm text-gray">Which WebSocket library do you prefer (Socket.io, native WebSocket, ws)?</p>
+                    <div style="padding-left: var(--spacing-md); border-left: 2px solid var(--color-black);">
+                      <p class="mb-xs">
+                        <strong>@startup_cto</strong>
+                        <span class="text-gray text-small">answered 5 days ago</span>
+                      </p>
+                      <p class="text-gray" style="margin: 0;">
+                        Socket.io preferred for ease of use and fallback support. But any WebSocket implementation that works reliably is acceptable.
+                      </p>
+                    </div>
+                  </div>
+
+                  <!-- Unanswered Question 1 -->
+                  <div class="card" style="background-color: var(--color-gray-100); border-left: 3px solid var(--color-black);">
+                    <p class="mb-xs">
+                      <strong>@backend_pro</strong>
+                      <span class="text-gray text-small">asked 3 days ago</span>
+                      <span class="badge badge-pending ml-sm">Unanswered</span>
+                    </p>
+                    <p class="text-gray" style="margin: 0;">
+                      Should chat history be stored in a database or is in-memory storage sufficient?
+                    </p>
+                  </div>
+
+                  <!-- Unanswered Question 2 -->
+                  <div class="card" style="background-color: var(--color-gray-100); border-left: 3px solid var(--color-black);">
+                    <p class="mb-xs">
+                      <strong>@scale_expert</strong>
+                      <span class="text-gray text-small">asked 4 days ago</span>
+                      <span class="badge badge-pending ml-sm">Unanswered</span>
+                    </p>
+                    <p class="text-gray" style="margin: 0;">
+                      How many concurrent users should the system support?
+                    </p>
+                  </div>
+
+                  <!-- Question 4 -->
+                  <div class="card" style="background-color: var(--color-gray-100);">
+                    <p class="mb-xs">
+                      <strong>@ui_developer</strong>
+                      <span class="text-gray text-small">asked 6 days ago</span>
+                    </p>
+                    <p class="mb-sm text-gray">Should typing indicators show which user is typing or just "someone is typing"?</p>
+                    <div style="padding-left: var(--spacing-md); border-left: 2px solid var(--color-black);">
+                      <p class="mb-xs">
+                        <strong>@startup_cto</strong>
+                        <span class="text-gray text-small">answered 6 days ago</span>
+                      </p>
+                      <p class="text-gray" style="margin: 0;">
+                        Show which user is typing (e.g., "John is typing..."). Multiple users should show all names.
+                      </p>
+                    </div>
+                  </div>
+
+                  <p class="text-center text-gray text-small" style="margin: var(--spacing-md) 0;">
+                    + 4 more questions (<a href="project.html">View all in project details</a>)
+                  </p>
+                </div>
+
+                <!-- Ask Question Button -->
+                <div class="mt-md">
+                  <button class="btn btn-primary ask-question-btn">Ask Clarifying Question</button>
+
+                  <!-- Question Form (hidden by default) -->
+                  <div class="question-form hidden mt-md">
+                    <textarea
+                      class="form-textarea mb-sm"
+                      rows="4"
+                      placeholder="Ask a specific question about the project specification..."
+                    ></textarea>
+                    <div class="btn-group">
+                      <button class="btn btn-primary submit-question">Submit Question</button>
+                      <button class="btn btn-secondary cancel-question">Cancel</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <p>&copy; 2025 Agora. Building infrastructure for merit-based work.</p>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="scripts.js"></script>
+</body>
+</html>

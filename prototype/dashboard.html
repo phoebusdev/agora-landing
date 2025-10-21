@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard - Agora</title>
+
+  <!-- Google Fonts - Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- Fixed Header -->
+  <header class="header">
+    <div class="header-inner">
+      <a href="dashboard.html" class="logo">AGORA</a>
+      <nav class="header-nav">
+        <a href="profile.html" id="dashboard-username">@demo_builder</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main class="main">
+    <div class="container-wide" style="padding-top: var(--spacing-xl); padding-bottom: var(--spacing-2xl);">
+      <!-- Page Header -->
+      <div class="mb-xl">
+        <h1 class="mb-sm">Dashboard</h1>
+        <p class="text-gray">Your personalized hub for all project activity.</p>
+      </div>
+
+      <!-- Quick Stats -->
+      <div class="grid grid-3 mb-xl">
+        <div class="card">
+          <h3 class="mb-xs" style="font-size: 36px; font-weight: var(--font-weight-bold);">95%</h3>
+          <p class="text-gray" style="margin: 0;">Acceptance Rate</p>
+        </div>
+
+        <div class="card">
+          <h3 class="mb-xs" style="font-size: 36px; font-weight: var(--font-weight-bold);">3</h3>
+          <p class="text-gray" style="margin: 0;">Active Projects</p>
+        </div>
+
+        <div class="card">
+          <h3 class="mb-xs" style="font-size: 36px; font-weight: var(--font-weight-bold);">$82,500</h3>
+          <p class="text-gray" style="margin: 0;">Total Earned</p>
+        </div>
+      </div>
+
+      <!-- Two Column Layout -->
+      <div class="two-column">
+        <!-- Left Column: Active Projects -->
+        <div>
+          <h2 class="mb-md">Active Projects</h2>
+
+          <!-- Tabs -->
+          <div class="tabs">
+            <button class="tab active" data-tab="as-builder">As Builder</button>
+            <button class="tab" data-tab="as-poster">As Poster</button>
+          </div>
+
+          <!-- As Builder Tab Content -->
+          <div id="as-builder" class="tab-content active">
+            <!-- Active Submission 1 -->
+            <div class="card mb-md">
+              <div class="flex flex-between mb-sm" style="align-items: flex-start;">
+                <div>
+                  <h3 class="mb-xs" style="font-size: 18px;">Mobile-Responsive Dashboard</h3>
+                  <p class="text-gray text-small" style="margin: 0;">Submitted 2 days ago</p>
+                </div>
+                <span class="badge badge-pending">Pending Review</span>
+              </div>
+              <p class="text-gray mb-sm">Payment: <strong>$5,000</strong></p>
+              <a href="project.html" class="btn btn-secondary">View Project</a>
+            </div>
+
+            <!-- Active Submission 2 -->
+            <div class="card mb-md">
+              <div class="flex flex-between mb-sm" style="align-items: flex-start;">
+                <div>
+                  <h3 class="mb-xs" style="font-size: 18px;">Financial Portfolio Tracker</h3>
+                  <p class="text-gray text-small" style="margin: 0;">Submitted 5 days ago</p>
+                </div>
+                <span class="badge badge-pending">Pending Review</span>
+              </div>
+              <p class="text-gray mb-sm">Payment: <strong>$8,000</strong></p>
+              <a href="project.html" class="btn btn-secondary">View Project</a>
+            </div>
+
+            <!-- Empty State Example (Hidden by default) -->
+            <!-- <div class="empty-state" style="display: none;">
+              <div class="empty-state-title">No Active Submissions</div>
+              <p style="margin: 0;">Browse projects and submit solutions to see them here.</p>
+              <a href="browse.html" class="btn btn-primary mt-md">Browse Projects</a>
+            </div> -->
+          </div>
+
+          <!-- As Poster Tab Content -->
+          <div id="as-poster" class="tab-content">
+            <!-- Posted Project 1 -->
+            <div class="card mb-md">
+              <div class="flex flex-between mb-sm" style="align-items: flex-start;">
+                <div>
+                  <h3 class="mb-xs" style="font-size: 18px;">Video Conference Platform</h3>
+                  <p class="text-gray text-small" style="margin: 0;">Posted 3 days ago</p>
+                </div>
+                <span class="badge badge-active">1 Submission</span>
+              </div>
+              <p class="text-gray mb-sm">Payment: <strong>$12,000</strong> (escrowed)</p>
+              <a href="evaluate.html" class="btn btn-primary">Review Submission</a>
+            </div>
+
+            <!-- Empty State for Posters -->
+            <div class="empty-state">
+              <div class="empty-state-title">No Other Posted Projects</div>
+              <p style="margin: 0;">Create a new project to see it here.</p>
+              <a href="post.html" class="btn btn-primary mt-md">Post New Project</a>
+            </div>
+          </div>
+
+          <!-- Recent Activity -->
+          <div class="mt-xl">
+            <h2 class="mb-md">Recent Activity</h2>
+
+            <div class="flex-column flex-gap-sm">
+              <!-- Activity 1 -->
+              <div style="padding: var(--spacing-sm); border-left: 2px solid var(--color-gray-300);">
+                <p class="text-small mb-xs"><strong>Submission Pending</strong></p>
+                <p class="text-gray text-small" style="margin: 0;">
+                  Your submission for "Mobile-Responsive Dashboard" is under review · 2 days ago
+                </p>
+              </div>
+
+              <!-- Activity 2 -->
+              <div style="padding: var(--spacing-sm); border-left: 2px solid var(--color-gray-300);">
+                <p class="text-small mb-xs"><strong>Payment Received</strong></p>
+                <p class="text-gray text-small" style="margin: 0;">
+                  $8,500 released for "E-commerce Checkout Flow" · 5 days ago
+                </p>
+              </div>
+
+              <!-- Activity 3 -->
+              <div style="padding: var(--spacing-sm); border-left: 2px solid var(--color-gray-300);">
+                <p class="text-small mb-xs"><strong>Submission Accepted</strong></p>
+                <p class="text-gray text-small" style="margin: 0;">
+                  Your submission for "E-commerce Checkout Flow" was accepted · 5 days ago
+                </p>
+              </div>
+
+              <!-- Activity 4 -->
+              <div style="padding: var(--spacing-sm); border-left: 2px solid var(--color-gray-300);">
+                <p class="text-small mb-xs"><strong>Question Answered</strong></p>
+                <p class="text-gray text-small" style="margin: 0;">
+                  @poster_pro answered your question on "Data Visualization Dashboard" · 1 week ago
+                </p>
+              </div>
+
+              <!-- Activity 5 -->
+              <div style="padding: var(--spacing-sm); border-left: 2px solid var(--color-gray-300);">
+                <p class="text-small mb-xs"><strong>Payment Received</strong></p>
+                <p class="text-gray text-small" style="margin: 0;">
+                  $6,200 released for "Data Visualization Dashboard" · 1 week ago
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right Column: Actions & Stats -->
+        <div>
+          <!-- Quick Actions -->
+          <div class="card mb-lg">
+            <h3 class="mb-md">Quick Actions</h3>
+            <div class="flex-column flex-gap-sm">
+              <a href="browse.html" class="btn btn-primary" style="width: 100%;">Browse Projects</a>
+              <a href="post.html" class="btn btn-secondary" style="width: 100%;">Post New Project</a>
+              <a href="clarify.html" class="btn btn-secondary" style="width: 100%;">View Clarifications</a>
+            </div>
+          </div>
+
+          <!-- Reputation Summary -->
+          <div class="card">
+            <h3 class="mb-md">Your Reputation</h3>
+
+            <div class="mb-md">
+              <div class="flex flex-between mb-xs">
+                <span class="text-small">Acceptance Rate</span>
+                <strong>95%</strong>
+              </div>
+              <div style="height: 8px; background-color: var(--color-gray-300); border-radius: 4px; overflow: hidden;">
+                <div style="height: 100%; width: 95%; background-color: var(--color-black);"></div>
+              </div>
+            </div>
+
+            <div class="stats-grid" style="grid-template-columns: 1fr;">
+              <div>
+                <p class="text-small text-gray mb-xs">Projects Submitted</p>
+                <p style="font-size: 24px; font-weight: var(--font-weight-bold); margin: 0;">16</p>
+              </div>
+              <div>
+                <p class="text-small text-gray mb-xs">Accepted</p>
+                <p style="font-size: 24px; font-weight: var(--font-weight-bold); margin: 0;">15</p>
+              </div>
+              <div>
+                <p class="text-small text-gray mb-xs">Rejected</p>
+                <p style="font-size: 24px; font-weight: var(--font-weight-bold); margin: 0;">1</p>
+              </div>
+              <div>
+                <p class="text-small text-gray mb-xs">Total Earned</p>
+                <p style="font-size: 24px; font-weight: var(--font-weight-bold); margin: 0;">$82,500</p>
+              </div>
+            </div>
+
+            <div class="mt-md">
+              <a href="profile.html" class="btn btn-secondary" style="width: 100%;">View Full Profile</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <p>&copy; 2025 Agora. Building infrastructure for merit-based work.</p>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="scripts.js"></script>
+</body>
+</html>

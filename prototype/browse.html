@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Browse Projects - Agora</title>
+
+  <!-- Google Fonts - Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- Fixed Header -->
+  <header class="header">
+    <div class="header-inner">
+      <a href="index.html" class="logo">AGORA</a>
+      <nav class="header-nav">
+        <a href="sign-in.html">Sign In</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main class="main">
+    <div class="container-wide" style="padding-top: var(--spacing-xl); padding-bottom: var(--spacing-2xl);">
+      <!-- Page Header -->
+      <div class="mb-xl">
+        <h1 class="mb-sm">Browse Projects</h1>
+        <p class="text-gray">Discover projects that match your skills. All payments are escrowed.</p>
+      </div>
+
+      <!-- Filters (Visual only - no functionality in prototype) -->
+      <div class="card mb-lg" style="padding: var(--spacing-md);">
+        <div class="flex flex-gap-md" style="flex-wrap: wrap;">
+          <input
+            type="search"
+            class="form-input"
+            placeholder="Search projects..."
+            style="flex: 1; min-width: 250px;"
+          >
+          <select class="form-select" style="min-width: 150px;">
+            <option>Any Payment</option>
+            <option>$1,000 - $5,000</option>
+            <option>$5,000 - $10,000</option>
+            <option>$10,000+</option>
+          </select>
+          <select class="form-select" style="min-width: 150px;">
+            <option>Any Date</option>
+            <option>Last 24 hours</option>
+            <option>Last 7 days</option>
+            <option>Last 30 days</option>
+          </select>
+          <select class="form-select" style="min-width: 150px;">
+            <option>All Clarity</option>
+            <option>High Clarity (5+ Q&A)</option>
+            <option>Medium Clarity (1-4 Q&A)</option>
+            <option>Needs Clarification</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- Project Grid -->
+      <div class="grid grid-2">
+        <!-- Project 1 -->
+        <a href="project.html" class="project-card">
+          <div class="project-card-header">
+            <div>
+              <h3 class="project-card-title">Mobile-Responsive Dashboard with User Authentication</h3>
+              <p class="text-gray mb-sm">Build a responsive dashboard that works across all devices with secure login.</p>
+            </div>
+            <div class="project-card-payment">$5,000</div>
+          </div>
+          <div class="project-card-meta">
+            <span>Posted 2 days ago</span>
+            <span>•</span>
+            <span>By <strong>@poster_pro</strong> (85% acceptance)</span>
+            <span>•</span>
+            <span>3 clarifying questions</span>
+          </div>
+        </a>
+
+        <!-- Project 2 -->
+        <a href="project.html" class="project-card">
+          <div class="project-card-header">
+            <div>
+              <h3 class="project-card-title">E-commerce Checkout Flow with Payment Integration</h3>
+              <p class="text-gray mb-sm">Create a complete checkout experience with Stripe integration and cart persistence.</p>
+            </div>
+            <div class="project-card-payment">$8,500</div>
+          </div>
+          <div class="project-card-meta">
+            <span>Posted 4 days ago</span>
+            <span>•</span>
+            <span>By <strong>@shop_owner</strong> (92% acceptance)</span>
+            <span>•</span>
+            <span>7 clarifying questions</span>
+          </div>
+        </a>
+
+        <!-- Project 3 -->
+        <a href="project.html" class="project-card">
+          <div class="project-card-header">
+            <div>
+              <h3 class="project-card-title">Data Visualization Dashboard for Sales Analytics</h3>
+              <p class="text-gray mb-sm">Build interactive charts and graphs showing sales trends with filtering capabilities.</p>
+            </div>
+            <div class="project-card-payment">$6,200</div>
+          </div>
+          <div class="project-card-meta">
+            <span>Posted 1 week ago</span>
+            <span>•</span>
+            <span>By <strong>@data_lead</strong> (88% acceptance)</span>
+            <span>•</span>
+            <span>2 clarifying questions</span>
+          </div>
+        </a>
+
+        <!-- Project 4 -->
+        <a href="project.html" class="project-card">
+          <div class="project-card-header">
+            <div>
+              <h3 class="project-card-title">REST API with Database Integration and Documentation</h3>
+              <p class="text-gray mb-sm">Design and implement a RESTful API with PostgreSQL database and Swagger docs.</p>
+            </div>
+            <div class="project-card-payment">$7,000</div>
+          </div>
+          <div class="project-card-meta">
+            <span>Posted 3 days ago</span>
+            <span>•</span>
+            <span>By <strong>@backend_dev</strong> (90% acceptance)</span>
+            <span>•</span>
+            <span>5 clarifying questions</span>
+          </div>
+        </a>
+
+        <!-- Project 5 -->
+        <a href="project.html" class="project-card">
+          <div class="project-card-header">
+            <div>
+              <h3 class="project-card-title">Marketing Landing Page with A/B Testing Setup</h3>
+              <p class="text-gray mb-sm">Create a high-converting landing page with analytics and A/B test infrastructure.</p>
+            </div>
+            <div class="project-card-payment">$3,500</div>
+          </div>
+          <div class="project-card-meta">
+            <span>Posted 5 days ago</span>
+            <span>•</span>
+            <span>By <strong>@marketing_pro</strong> (95% acceptance)</span>
+            <span>•</span>
+            <span>1 clarifying question</span>
+          </div>
+        </a>
+
+        <!-- Project 6 -->
+        <a href="project.html" class="project-card">
+          <div class="project-card-header">
+            <div>
+              <h3 class="project-card-title">Real-time Chat Application with WebSocket Support</h3>
+              <p class="text-gray mb-sm">Build a real-time messaging system with user presence, typing indicators, and history.</p>
+            </div>
+            <div class="project-card-payment">$9,000</div>
+          </div>
+          <div class="project-card-meta">
+            <span>Posted 6 days ago</span>
+            <span>•</span>
+            <span>By <strong>@startup_cto</strong> (87% acceptance)</span>
+            <span>•</span>
+            <span>8 clarifying questions</span>
+          </div>
+        </a>
+
+        <!-- Project 7 -->
+        <a href="project.html" class="project-card">
+          <div class="project-card-header">
+            <div>
+              <h3 class="project-card-title">Automated Email Campaign Tool with Scheduling</h3>
+              <p class="text-gray mb-sm">Create an email automation system with template management and scheduled sending.</p>
+            </div>
+            <div class="project-card-payment">$5,500</div>
+          </div>
+          <div class="project-card-meta">
+            <span>Posted 1 day ago</span>
+            <span>•</span>
+            <span>By <strong>@saas_founder</strong> (93% acceptance)</span>
+            <span>•</span>
+            <span>4 clarifying questions</span>
+          </div>
+        </a>
+
+        <!-- Project 8 -->
+        <a href="project.html" class="project-card">
+          <div class="project-card-header">
+            <div>
+              <h3 class="project-card-title">Content Management System with WYSIWYG Editor</h3>
+              <p class="text-gray mb-sm">Build a CMS with rich text editing, media uploads, and version control.</p>
+            </div>
+            <div class="project-card-payment">$10,000</div>
+          </div>
+          <div class="project-card-meta">
+            <span>Posted 2 weeks ago</span>
+            <span>•</span>
+            <span>By <strong>@publisher</strong> (89% acceptance)</span>
+            <span>•</span>
+            <span>6 clarifying questions</span>
+          </div>
+        </a>
+
+        <!-- Project 9 -->
+        <a href="project.html" class="project-card">
+          <div class="project-card-header">
+            <div>
+              <h3 class="project-card-title">Mobile App Prototype with Figma-to-Code Conversion</h3>
+              <p class="text-gray mb-sm">Transform provided Figma designs into a working React Native mobile app.</p>
+            </div>
+            <div class="project-card-payment">$6,800</div>
+          </div>
+          <div class="project-card-meta">
+            <span>Posted 3 days ago</span>
+            <span>•</span>
+            <span>By <strong>@designer_lead</strong> (91% acceptance)</span>
+            <span>•</span>
+            <span>2 clarifying questions</span>
+          </div>
+        </a>
+
+        <!-- Project 10 -->
+        <a href="project.html" class="project-card">
+          <div class="project-card-header">
+            <div>
+              <h3 class="project-card-title">Inventory Management System with Barcode Scanning</h3>
+              <p class="text-gray mb-sm">Create a system for tracking inventory with barcode scanning and low-stock alerts.</p>
+            </div>
+            <div class="project-card-payment">$7,500</div>
+          </div>
+          <div class="project-card-meta">
+            <span>Posted 1 week ago</span>
+            <span>•</span>
+            <span>By <strong>@warehouse_mgr</strong> (86% acceptance)</span>
+            <span>•</span>
+            <span>5 clarifying questions</span>
+          </div>
+        </a>
+
+        <!-- Project 11 -->
+        <a href="project.html" class="project-card">
+          <div class="project-card-header">
+            <div>
+              <h3 class="project-card-title">Video Conference Platform with Screen Sharing</h3>
+              <p class="text-gray mb-sm">Build a WebRTC-based video conferencing tool with recording and screen share.</p>
+            </div>
+            <div class="project-card-payment">$12,000</div>
+          </div>
+          <div class="project-card-meta">
+            <span>Posted 4 days ago</span>
+            <span>•</span>
+            <span>By <strong>@remote_team</strong> (94% acceptance)</span>
+            <span>•</span>
+            <span>9 clarifying questions</span>
+          </div>
+        </a>
+
+        <!-- Project 12 -->
+        <a href="project.html" class="project-card">
+          <div class="project-card-header">
+            <div>
+              <h3 class="project-card-title">Financial Portfolio Tracker with API Integrations</h3>
+              <p class="text-gray mb-sm">Create a dashboard tracking stocks, crypto, and bonds with real-time price updates.</p>
+            </div>
+            <div class="project-card-payment">$8,000</div>
+          </div>
+          <div class="project-card-meta">
+            <span>Posted 5 days ago</span>
+            <span>•</span>
+            <span>By <strong>@investor_john</strong> (90% acceptance)</span>
+            <span>•</span>
+            <span>3 clarifying questions</span>
+          </div>
+        </a>
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <p>&copy; 2025 Agora. Building infrastructure for merit-based work.</p>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="scripts.js"></script>
+</body>
+</html>

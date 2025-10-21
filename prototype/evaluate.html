@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Evaluate Submission - Agora</title>
+
+  <!-- Google Fonts - Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- Fixed Header -->
+  <header class="header">
+    <div class="header-inner">
+      <a href="dashboard.html" class="logo">AGORA</a>
+      <nav class="header-nav">
+        <a href="profile.html">@demo_poster</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main class="main">
+    <div class="container" style="padding-top: var(--spacing-xl); padding-bottom: var(--spacing-2xl);">
+      <!-- Page Header -->
+      <div class="mb-lg">
+        <h1 class="mb-sm">Evaluate Submission</h1>
+        <p class="text-gray">
+          Project: <strong>Mobile-Responsive Dashboard with User Authentication</strong>
+        </p>
+        <p class="text-gray text-small">
+          Payment: <strong>$5,000</strong> (escrowed) · Submitted by <a href="profile.html"><strong>@builder_elite</strong></a>
+        </p>
+      </div>
+
+      <!-- 72-Hour Deadline Notice -->
+      <div class="alert alert-warning mb-lg">
+        <strong>⏰ Evaluation Deadline:</strong> You have 48 hours remaining to evaluate this submission.
+        If no decision is made within 72 hours, payment will be automatically released to the builder.
+      </div>
+
+      <!-- Collapsible Original Specification -->
+      <div class="mb-lg">
+        <button
+          class="collapsible-header"
+          data-toggle="specification"
+          style="width: 100%; text-align: left; font-weight: var(--font-weight-semibold);"
+        >
+          <span>📋 Original Specification</span>
+          <span class="toggle-icon">▼</span>
+        </button>
+
+        <div id="specification-content" class="collapsible-content hidden">
+          <h3 class="mb-sm">Overview</h3>
+          <p class="text-gray mb-md">
+            Create a web-based dashboard application that provides a clean, professional interface for users
+            to view and manage their data. The dashboard must work seamlessly on mobile phones, tablets,
+            and desktop computers. Authentication is required before users can access any dashboard features.
+          </p>
+
+          <h3 class="mb-sm">Core Features</h3>
+          <ul style="margin-left: var(--spacing-md); color: var(--color-gray-600); line-height: 1.8;">
+            <li><strong>User Registration:</strong> New users can create an account with email and password</li>
+            <li><strong>User Login:</strong> Existing users can sign in with their credentials</li>
+            <li><strong>Dashboard View:</strong> Authenticated users see a personalized dashboard with sample data</li>
+            <li><strong>Data Display:</strong> Dashboard shows at least 3 different types of data visualizations</li>
+            <li><strong>Navigation:</strong> Clear navigation between dashboard sections</li>
+            <li><strong>Logout:</strong> Users can securely end their session</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Submitted Solution -->
+      <div class="card mb-lg">
+        <h2 class="mb-md">Submitted Solution</h2>
+
+        <div class="mb-md">
+          <strong class="mb-xs" style="display: block;">Demo URL</strong>
+          <a href="https://demo-dashboard.vercel.app" target="_blank" rel="noopener noreferrer" style="font-size: 18px;">
+            https://demo-dashboard.vercel.app
+          </a>
+          <div class="mt-sm">
+            <a href="https://demo-dashboard.vercel.app" target="_blank" class="btn btn-primary">
+              Open Demo in New Tab →
+            </a>
+          </div>
+        </div>
+
+        <div class="grid grid-2 mb-md">
+          <div>
+            <strong class="mb-xs" style="display: block;">Test Username</strong>
+            <code style="padding: 4px 8px; background-color: var(--color-gray-100); border-radius: 4px;">demo@example.com</code>
+          </div>
+          <div>
+            <strong class="mb-xs" style="display: block;">Test Password</strong>
+            <code style="padding: 4px 8px; background-color: var(--color-gray-100); border-radius: 4px;">demo123</code>
+          </div>
+        </div>
+
+        <div class="mb-md">
+          <strong class="mb-xs" style="display: block;">Deployment Instructions</strong>
+          <p class="text-gray" style="margin: 0;">
+            After logging in with the test credentials, click the "Dashboard" icon in the top navigation.
+            The dashboard will load with sample data visualizations. To test responsiveness, resize your browser
+            window to mobile width (375px).
+          </p>
+        </div>
+
+        <div>
+          <strong class="mb-xs" style="display: block;">Technical Explanation</strong>
+          <p class="text-gray" style="margin: 0; white-space: pre-wrap; line-height: 1.7;">Built with React 18 and Next.js 14 for server-side rendering. Authentication uses bcrypt for password hashing and JWT tokens for session management. Dashboard includes three data visualizations: a statistics card grid (showing key metrics), a line chart for trends (using Chart.js), and a data table with filtering.
+
+Responsive design implemented with Tailwind CSS. Mobile breakpoint at 375px uses single-column layout with stacked visualizations. Desktop layout (1920px) uses a two-column grid for optimal space usage.
+
+Deployed on Vercel with environment variables for JWT secret. Data is stored in-memory for demo purposes (resets on deployment). Total development time: ~12 hours.</p>
+        </div>
+      </div>
+
+      <!-- Evaluation Checklist -->
+      <div class="mb-lg">
+        <h2 class="mb-md">Acceptance Criteria Evaluation</h2>
+        <p class="text-gray mb-md">
+          Test each criterion against the submitted demo. Mark Pass or Fail. All must pass for acceptance.
+        </p>
+
+        <!-- Criterion 1 -->
+        <div class="criterion-item" data-criterion-id="c1">
+          <div class="mb-sm">
+            <strong>1. User can create an account with email and password</strong>
+          </div>
+
+          <div class="radio-group mb-sm">
+            <div class="form-check">
+              <input type="radio" id="c1-pass" name="criterion-1" value="pass" class="form-check-input">
+              <label for="c1-pass" class="form-check-label">✓ Pass</label>
+            </div>
+            <div class="form-check">
+              <input type="radio" id="c1-fail" name="criterion-1" value="fail" class="form-check-input">
+              <label for="c1-fail" class="form-check-label">✗ Fail</label>
+            </div>
+          </div>
+
+          <div class="form-group" style="margin: 0;">
+            <label for="notes-c1" class="form-label">Notes (Optional)</label>
+            <textarea id="notes-c1" class="form-textarea" rows="2" placeholder="Add any observations..."></textarea>
+          </div>
+        </div>
+
+        <!-- Criterion 2 -->
+        <div class="criterion-item" data-criterion-id="c2">
+          <div class="mb-sm">
+            <strong>2. User can sign in with valid credentials</strong>
+          </div>
+
+          <div class="radio-group mb-sm">
+            <div class="form-check">
+              <input type="radio" id="c2-pass" name="criterion-2" value="pass" class="form-check-input">
+              <label for="c2-pass" class="form-check-label">✓ Pass</label>
+            </div>
+            <div class="form-check">
+              <input type="radio" id="c2-fail" name="criterion-2" value="fail" class="form-check-input">
+              <label for="c2-fail" class="form-check-label">✗ Fail</label>
+            </div>
+          </div>
+
+          <div class="form-group" style="margin: 0;">
+            <label for="notes-c2" class="form-label">Notes (Optional)</label>
+            <textarea id="notes-c2" class="form-textarea" rows="2" placeholder="Add any observations..."></textarea>
+          </div>
+        </div>
+
+        <!-- Criterion 3 -->
+        <div class="criterion-item" data-criterion-id="c3">
+          <div class="mb-sm">
+            <strong>3. Dashboard displays correctly on mobile (375px width)</strong>
+          </div>
+
+          <div class="radio-group mb-sm">
+            <div class="form-check">
+              <input type="radio" id="c3-pass" name="criterion-3" value="pass" class="form-check-input">
+              <label for="c3-pass" class="form-check-label">✓ Pass</label>
+            </div>
+            <div class="form-check">
+              <input type="radio" id="c3-fail" name="criterion-3" value="fail" class="form-check-input">
+              <label for="c3-fail" class="form-check-label">✗ Fail</label>
+            </div>
+          </div>
+
+          <div class="form-group" style="margin: 0;">
+            <label for="notes-c3" class="form-label">Notes (Optional)</label>
+            <textarea id="notes-c3" class="form-textarea" rows="2" placeholder="Add any observations..."></textarea>
+          </div>
+        </div>
+
+        <!-- Criterion 4 -->
+        <div class="criterion-item" data-criterion-id="c4">
+          <div class="mb-sm">
+            <strong>4. Dashboard displays correctly on desktop (1920px width)</strong>
+          </div>
+
+          <div class="radio-group mb-sm">
+            <div class="form-check">
+              <input type="radio" id="c4-pass" name="criterion-4" value="pass" class="form-check-input">
+              <label for="c4-pass" class="form-check-label">✓ Pass</label>
+            </div>
+            <div class="form-check">
+              <input type="radio" id="c4-fail" name="criterion-4" value="fail" class="form-check-input">
+              <label for="c4-fail" class="form-check-label">✗ Fail</label>
+            </div>
+          </div>
+
+          <div class="form-group" style="margin: 0;">
+            <label for="notes-c4" class="form-label">Notes (Optional)</label>
+            <textarea id="notes-c4" class="form-textarea" rows="2" placeholder="Add any observations..."></textarea>
+          </div>
+        </div>
+
+        <!-- Criterion 5 -->
+        <div class="criterion-item" data-criterion-id="c5">
+          <div class="mb-sm">
+            <strong>5. Dashboard shows at least 3 different data visualizations</strong>
+          </div>
+
+          <div class="radio-group mb-sm">
+            <div class="form-check">
+              <input type="radio" id="c5-pass" name="criterion-5" value="pass" class="form-check-input">
+              <label for="c5-pass" class="form-check-label">✓ Pass</label>
+            </div>
+            <div class="form-check">
+              <input type="radio" id="c5-fail" name="criterion-5" value="fail" class="form-check-input">
+              <label for="c5-fail" class="form-check-label">✗ Fail</label>
+            </div>
+          </div>
+
+          <div class="form-group" style="margin: 0;">
+            <label for="notes-c5" class="form-label">Notes (Optional)</label>
+            <textarea id="notes-c5" class="form-textarea" rows="2" placeholder="Add any observations..."></textarea>
+          </div>
+        </div>
+
+        <!-- Criterion 6 -->
+        <div class="criterion-item" data-criterion-id="c6">
+          <div class="mb-sm">
+            <strong>6. Unauthenticated users cannot access dashboard</strong>
+          </div>
+
+          <div class="radio-group mb-sm">
+            <div class="form-check">
+              <input type="radio" id="c6-pass" name="criterion-6" value="pass" class="form-check-input">
+              <label for="c6-pass" class="form-check-label">✓ Pass</label>
+            </div>
+            <div class="form-check">
+              <input type="radio" id="c6-fail" name="criterion-6" value="fail" class="form-check-input">
+              <label for="c6-fail" class="form-check-label">✗ Fail</label>
+            </div>
+          </div>
+
+          <div class="form-group" style="margin: 0;">
+            <label for="notes-c6" class="form-label">Notes (Optional)</label>
+            <textarea id="notes-c6" class="form-textarea" rows="2" placeholder="Add any observations..."></textarea>
+          </div>
+        </div>
+
+        <!-- Criterion 7 -->
+        <div class="criterion-item" data-criterion-id="c7">
+          <div class="mb-sm">
+            <strong>7. User can log out and session is cleared</strong>
+          </div>
+
+          <div class="radio-group mb-sm">
+            <div class="form-check">
+              <input type="radio" id="c7-pass" name="criterion-7" value="pass" class="form-check-input">
+              <label for="c7-pass" class="form-check-label">✓ Pass</label>
+            </div>
+            <div class="form-check">
+              <input type="radio" id="c7-fail" name="criterion-7" value="fail" class="form-check-input">
+              <label for="c7-fail" class="form-check-label">✗ Fail</label>
+            </div>
+          </div>
+
+          <div class="form-group" style="margin: 0;">
+            <label for="notes-c7" class="form-label">Notes (Optional)</label>
+            <textarea id="notes-c7" class="form-textarea" rows="2" placeholder="Add any observations..."></textarea>
+          </div>
+        </div>
+      </div>
+
+      <!-- Overall Reflection (Optional) -->
+      <div class="card mb-xl" style="background-color: var(--color-gray-100);">
+        <h3 class="mb-md">Overall Reflection (Optional)</h3>
+        <textarea
+          class="form-textarea"
+          rows="4"
+          placeholder="Any additional comments about the submission quality, code clarity, or user experience..."
+        ></textarea>
+        <p class="form-helper" style="margin-top: var(--spacing-xs);">
+          This is shared with the builder regardless of your decision. Be constructive.
+        </p>
+      </div>
+
+      <!-- Decision Buttons -->
+      <div class="btn-group mb-md">
+        <button id="accept-btn" class="btn btn-primary" disabled>
+          Accept & Release $5,000 Payment
+        </button>
+        <button id="reject-btn" class="btn btn-secondary" disabled>
+          Reject Submission
+        </button>
+      </div>
+
+      <p class="text-gray text-small">
+        <strong>Important:</strong> Your decision is final and builds both parties' reputations.
+        Accept only if <strong>all</strong> criteria pass. Rejection returns escrowed payment to you.
+      </p>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <p>&copy; 2025 Agora. Building infrastructure for merit-based work.</p>
+  </footer>
+
+  <!-- Accept Modal -->
+  <div id="accept-modal" class="modal-overlay hidden">
+    <div class="modal">
+      <div class="modal-header">
+        <h3 class="modal-title">Accept Submission?</h3>
+      </div>
+      <div class="modal-body">
+        <p>
+          You are about to accept this submission and release <strong>$5,000</strong> to <strong>@builder_elite</strong>.
+          This action is irreversible.
+        </p>
+        <p style="margin: 0;">
+          By accepting, you confirm that all 7 acceptance criteria have been met.
+        </p>
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-secondary modal-cancel">Cancel</button>
+        <button class="btn btn-primary modal-confirm">Confirm Accept</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Reject Modal -->
+  <div id="reject-modal" class="modal-overlay hidden">
+    <div class="modal">
+      <div class="modal-header">
+        <h3 class="modal-title">Reject Submission?</h3>
+      </div>
+      <div class="modal-body">
+        <p>
+          You are about to reject this submission. The escrowed <strong>$5,000</strong> will be returned to you.
+        </p>
+        <p style="margin: 0;">
+          <strong>@builder_elite</strong> will receive your evaluation notes. Be fair and constructive.
+        </p>
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-secondary modal-cancel">Cancel</button>
+        <button class="btn btn-primary modal-confirm">Confirm Reject</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="scripts.js"></script>
+</body>
+</html>

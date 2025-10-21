@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Submit Solution - Agora</title>
+
+  <!-- Google Fonts - Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- Fixed Header -->
+  <header class="header">
+    <div class="header-inner">
+      <a href="dashboard.html" class="logo">AGORA</a>
+      <nav class="header-nav">
+        <a href="profile.html">@demo_builder</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main class="main">
+    <div class="container" style="padding-top: var(--spacing-xl); padding-bottom: var(--spacing-2xl);">
+      <!-- Page Header -->
+      <div class="mb-xl">
+        <h1 class="mb-sm">Submit Your Solution</h1>
+        <p class="text-gray">
+          Project: <strong>Mobile-Responsive Dashboard with User Authentication</strong>
+        </p>
+        <p class="text-gray text-small">
+          Payment: <strong>$5,000</strong> (escrowed)
+        </p>
+      </div>
+
+      <!-- Collapsible Requirements Reference -->
+      <div class="mb-lg">
+        <button
+          class="collapsible-header"
+          data-toggle="requirements"
+          style="width: 100%; text-align: left; font-weight: var(--font-weight-semibold);"
+        >
+          <span>📋 Quick Reference: Acceptance Criteria</span>
+          <span class="toggle-icon">▼</span>
+        </button>
+
+        <div id="requirements-content" class="collapsible-content hidden">
+          <ol style="margin-left: var(--spacing-md); color: var(--color-gray-600); line-height: 1.8;">
+            <li>User can create an account with email and password</li>
+            <li>User can sign in with valid credentials</li>
+            <li>Dashboard displays correctly on mobile (375px width)</li>
+            <li>Dashboard displays correctly on desktop (1920px width)</li>
+            <li>Dashboard shows at least 3 different data visualizations</li>
+            <li>Unauthenticated users cannot access dashboard</li>
+            <li>User can log out and session is cleared</li>
+          </ol>
+          <p class="text-small text-gray mt-md" style="margin: 0;">
+            <a href="project.html">View full specification →</a>
+          </p>
+        </div>
+      </div>
+
+      <!-- Submission Form -->
+      <form id="submit-solution-form">
+        <!-- Demo URL -->
+        <div class="form-group">
+          <label for="demo-url" class="form-label">Demo URL *</label>
+          <input
+            type="url"
+            id="demo-url"
+            class="form-input"
+            placeholder="https://your-demo.vercel.app"
+            required
+          >
+          <p class="form-helper">
+            Provide a live, publicly accessible URL where your solution can be tested.
+          </p>
+        </div>
+
+        <!-- Test Credentials -->
+        <div class="grid grid-2">
+          <div class="form-group">
+            <label for="test-username" class="form-label">Test Username (Optional)</label>
+            <input
+              type="text"
+              id="test-username"
+              class="form-input"
+              placeholder="demo@example.com"
+            >
+          </div>
+
+          <div class="form-group">
+            <label for="test-password" class="form-label">Test Password (Optional)</label>
+            <input
+              type="text"
+              id="test-password"
+              class="form-input"
+              placeholder="demo123"
+            >
+          </div>
+        </div>
+        <p class="form-helper" style="margin-top: calc(-1 * var(--spacing-sm));">
+          If your demo requires login, provide test credentials. Otherwise, evaluator will create an account.
+        </p>
+
+        <!-- Deployment Instructions -->
+        <div class="form-group">
+          <label for="deployment-instructions" class="form-label">Deployment Instructions (Optional)</label>
+          <textarea
+            id="deployment-instructions"
+            class="form-textarea"
+            rows="4"
+            placeholder="Any special instructions for accessing or using your demo (e.g., 'Click the dashboard icon after logging in')..."
+          ></textarea>
+          <p class="form-helper">
+            Help the evaluator navigate your solution. Keep it brief and clear.
+          </p>
+        </div>
+
+        <!-- Technical Explanation -->
+        <div class="form-group">
+          <label for="technical-explanation" class="form-label">Technical Explanation (Optional)</label>
+          <textarea
+            id="technical-explanation"
+            class="form-textarea"
+            rows="6"
+            placeholder="Brief explanation of your implementation approach, technologies used, and any notable decisions (500 words max)..."
+          ></textarea>
+          <p class="form-helper">
+            Max 500 words. This helps the evaluator understand your work but is not part of acceptance criteria.
+          </p>
+        </div>
+
+        <!-- Acknowledgment -->
+        <div class="card mb-lg" style="background-color: var(--color-gray-100);">
+          <h3 class="mb-md">Submission Acknowledgment</h3>
+          <div class="form-check">
+            <input
+              type="checkbox"
+              id="acknowledgment"
+              class="form-check-input"
+              required
+            >
+            <label for="acknowledgment" class="form-check-label">
+              I acknowledge that my solution will be evaluated strictly against the 7 acceptance criteria
+              listed in the project specification. Payment will only be released if <strong>all criteria pass</strong>.
+              I understand that the project poster has 72 hours to complete evaluation and make a decision.
+            </label>
+          </div>
+        </div>
+
+        <!-- Action Buttons -->
+        <div class="btn-group">
+          <button type="submit" class="btn btn-primary" disabled>
+            Submit Solution
+          </button>
+          <a href="project.html" class="btn btn-secondary">Cancel</a>
+        </div>
+
+        <p class="text-gray text-small mt-md">
+          By submitting, you confirm that this is your original work and you have the right to license it
+          as agreed in the project terms.
+        </p>
+      </form>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <p>&copy; 2025 Agora. Building infrastructure for merit-based work.</p>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="scripts.js"></script>
+</body>
+</html>

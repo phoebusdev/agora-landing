@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Post New Project - Agora</title>
+
+  <!-- Google Fonts - Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- Fixed Header -->
+  <header class="header">
+    <div class="header-inner">
+      <a href="dashboard.html" class="logo">AGORA</a>
+      <nav class="header-nav">
+        <a href="profile.html">@demo_poster</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main class="main">
+    <div class="container" style="padding-top: var(--spacing-xl); padding-bottom: var(--spacing-2xl);">
+      <!-- Page Header -->
+      <div class="mb-xl">
+        <h1 class="mb-sm">Post a New Project</h1>
+        <p class="text-gray">
+          Define clear specifications and acceptance criteria. Payment will be escrowed when you publish.
+        </p>
+      </div>
+
+      <form id="post-project-form">
+        <!-- Basic Information Section -->
+        <div class="card mb-lg">
+          <h2 class="mb-md">Basic Information</h2>
+
+          <!-- Project Title -->
+          <div class="form-group">
+            <label for="project-title" class="form-label">Project Title *</label>
+            <input
+              type="text"
+              id="project-title"
+              class="form-input"
+              placeholder="e.g., Mobile-Responsive Dashboard with User Authentication"
+              required
+              maxlength="100"
+            >
+            <p class="form-helper">Max 100 characters. Be specific and descriptive.</p>
+          </div>
+
+          <!-- One-Sentence Summary -->
+          <div class="form-group">
+            <label for="project-summary" class="form-label">One-Sentence Summary *</label>
+            <input
+              type="text"
+              id="project-summary"
+              class="form-input"
+              placeholder="e.g., Build a responsive dashboard that works across all devices with secure login"
+              required
+              maxlength="200"
+            >
+            <p class="form-helper">Max 200 characters. This appears in project listings.</p>
+          </div>
+
+          <!-- Payment Amount -->
+          <div class="form-group">
+            <label for="payment-amount" class="form-label">Payment Amount (USD) *</label>
+            <div style="position: relative;">
+              <span style="position: absolute; left: 12px; top: 50%; transform: translateY(-50%); font-weight: var(--font-weight-semibold);">$</span>
+              <input
+                type="number"
+                id="payment-amount"
+                class="form-input"
+                placeholder="5000"
+                required
+                min="100"
+                step="100"
+                style="padding-left: 28px;"
+              >
+            </div>
+            <p class="form-helper">
+              This amount will be escrowed when you publish. Released to builder only if all acceptance criteria pass.
+            </p>
+          </div>
+        </div>
+
+        <!-- Detailed Specification Section -->
+        <div class="card mb-lg">
+          <h2 class="mb-md">Detailed Specification</h2>
+
+          <div class="form-group">
+            <label for="specification" class="form-label">Full Project Description *</label>
+            <textarea
+              id="specification"
+              class="form-textarea"
+              rows="12"
+              placeholder="Describe the project in detail. Include:
+- Overview and purpose
+- Technical requirements
+- Core features
+- Deliverables expected
+- Any constraints or preferences
+
+Be as specific as possible to avoid ambiguity."
+              required
+            ></textarea>
+            <p class="form-helper">
+              This is the complete specification builders will reference. Clarity reduces disputes.
+            </p>
+          </div>
+        </div>
+
+        <!-- Acceptance Criteria Section -->
+        <div class="card mb-lg">
+          <h2 class="mb-md">Acceptance Criteria</h2>
+          <p class="text-gray mb-md">
+            Define <strong>specific, testable conditions</strong> that must all pass for acceptance.
+            Minimum 3 required. These criteria are binding—solutions must meet all of them.
+          </p>
+
+          <div id="criteria-list">
+            <!-- Criterion 1 (default) -->
+            <div class="criterion-input-group flex flex-gap-sm mb-sm">
+              <input
+                type="text"
+                class="form-input"
+                name="criterion-1"
+                placeholder="e.g., User can create an account with email and password"
+                required
+                style="flex: 1;"
+              >
+              <button type="button" class="btn btn-secondary remove-criterion" disabled>Remove</button>
+            </div>
+
+            <!-- Criterion 2 (default) -->
+            <div class="criterion-input-group flex flex-gap-sm mb-sm">
+              <input
+                type="text"
+                class="form-input"
+                name="criterion-2"
+                placeholder="e.g., User can sign in with valid credentials"
+                required
+                style="flex: 1;"
+              >
+              <button type="button" class="btn btn-secondary remove-criterion" disabled>Remove</button>
+            </div>
+
+            <!-- Criterion 3 (default) -->
+            <div class="criterion-input-group flex flex-gap-sm mb-sm">
+              <input
+                type="text"
+                class="form-input"
+                name="criterion-3"
+                placeholder="e.g., Dashboard displays correctly on mobile (375px width)"
+                required
+                style="flex: 1;"
+              >
+              <button type="button" class="btn btn-secondary remove-criterion" disabled>Remove</button>
+            </div>
+          </div>
+
+          <button type="button" id="add-criterion" class="btn btn-secondary">
+            + Add Criterion
+          </button>
+
+          <p class="form-helper mt-md">
+            <strong>Tip:</strong> Each criterion should be independently testable and objective.
+            Avoid subjective terms like "looks good" or "feels fast."
+          </p>
+        </div>
+
+        <!-- Preview Section -->
+        <div class="card mb-lg" style="background-color: var(--color-gray-100);">
+          <h3 class="mb-sm">💡 Before You Post</h3>
+          <ul style="margin-left: var(--spacing-md); color: var(--color-gray-600); line-height: 1.8;">
+            <li>Review your specification for clarity and completeness</li>
+            <li>Ensure acceptance criteria are specific and testable</li>
+            <li>Consider likely clarifying questions and address them in the specification</li>
+            <li>Payment will be escrowed immediately when you publish</li>
+            <li>You'll have 72 hours to evaluate each submission</li>
+          </ul>
+        </div>
+
+        <!-- Action Buttons -->
+        <div class="btn-group">
+          <button type="submit" class="btn btn-primary">
+            Post Project & Escrow Payment
+          </button>
+          <a href="dashboard.html" class="btn btn-secondary">Cancel</a>
+        </div>
+
+        <p class="text-gray text-small mt-md">
+          By posting, you agree to escrow the payment amount and evaluate submissions fairly
+          against your stated acceptance criteria.
+        </p>
+      </form>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <p>&copy; 2025 Agora. Building infrastructure for merit-based work.</p>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="scripts.js"></script>
+</body>
+</html>
