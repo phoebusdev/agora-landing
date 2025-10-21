@@ -169,6 +169,11 @@ nav ul {
   transform-origin: center center;
   opacity: 0.7; /* Reduced from 0.75 for more de-emphasis */
 
+  /* Prevent font-weight changes from causing layout shift */
+  text-rendering: geometricPrecision;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
   /* Animation - explicit properties for smooth transitions */
   transition: transform 300ms cubic-bezier(0.4, 0.0, 0.2, 1),
               opacity 300ms cubic-bezier(0.4, 0.0, 0.2, 1),
@@ -181,14 +186,23 @@ nav ul {
   cursor: pointer;
 }
 
-/* Directional translation for items before active - move left */
-.nav-link:has(~ .nav-link.active) {
-  transform: scale(0.88) translateX(-8px); /* Move 8px to the left, away from active */
+/* When transitioning between active states, use gentler easing for extra smoothness */
+.nav-link.nav-transitioning {
+  transition: transform 350ms cubic-bezier(0.25, 0.1, 0.25, 1),
+              opacity 350ms cubic-bezier(0.25, 0.1, 0.25, 1),
+              color 350ms cubic-bezier(0.25, 0.1, 0.25, 1),
+              margin 350ms cubic-bezier(0.25, 0.1, 0.25, 1),
+              font-weight 350ms cubic-bezier(0.25, 0.1, 0.25, 1);
 }
 
-/* Directional translation for items after active - move right */
-.nav-link.active ~ .nav-link {
-  transform: scale(0.88) translateX(8px); /* Move 8px to the right, away from active */
+/* Directional translation - items before active move left */
+.nav-link.before-active {
+  transform: scale(0.88) translateX(-8px);
+}
+
+/* Directional translation - items after active move right */
+.nav-link.after-active {
+  transform: scale(0.88) translateX(8px);
 }
 
 .nav-link:hover {
@@ -386,8 +400,8 @@ footer {
   }
 
   /* Disable all directional translation effects on mobile */
-  .nav-link:has(~ .nav-link.active),
-  .nav-link.active ~ .nav-link {
+  .nav-link.before-active,
+  .nav-link.after-active {
     transform: scale(1.0) translateX(0px); /* Override all translation rules */
   }
 

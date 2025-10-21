@@ -43,6 +43,7 @@
 
   /**
    * Update navigation active states based on current section
+   * Uses explicit directional classes for smooth, coordinated animations
    */
   function updateActiveNavigation() {
     const activeSectionId = getCurrentSection();
@@ -59,23 +60,48 @@
       ? document.querySelector(`.nav-link[data-section="${activeSectionId}"]`)
       : null;
 
-    // Step 1: Remove active class from all links except the new active one
+    // If no new active link found, remove all state classes
+    if (!newActiveLink) {
+      navLinks.forEach(link => {
+        link.classList.remove('active', 'before-active', 'after-active');
+      });
+      return;
+    }
+
+    // Find index of new active link
+    const newActiveIndex = Array.from(navLinks).indexOf(newActiveLink);
+
+    // Add transitioning class to all links for coordinated animation
     navLinks.forEach(link => {
-      if (link !== newActiveLink) {
-        link.classList.remove('active');
+      link.classList.add('nav-transitioning');
+    });
+
+    // Apply directional classes explicitly based on position relative to active
+    navLinks.forEach((link, index) => {
+      // Remove all state classes first
+      link.classList.remove('active', 'before-active', 'after-active');
+
+      // Apply new state classes based on position
+      if (index < newActiveIndex) {
+        link.classList.add('before-active');
+      } else if (index > newActiveIndex) {
+        link.classList.add('after-active');
       }
     });
 
-    // Step 2: Add active class to new link after a tiny delay
-    // This ensures the browser processes the removal before the addition,
-    // allowing CSS transitions to work smoothly
-    if (newActiveLink && !newActiveLink.classList.contains('active')) {
+    // Add active class to new link after ensuring browser has processed changes
+    requestAnimationFrame(() => {
       requestAnimationFrame(() => {
-        requestAnimationFrame(() => {
-          newActiveLink.classList.add('active');
-        });
+        newActiveLink.classList.add('active');
+
+        // Remove transitioning class after transitions complete (350ms + buffer)
+        setTimeout(() => {
+          navLinks.forEach(link => {
+            link.classList.remove('nav-transitioning');
+          });
+        }, 400);
       });
-    }
+    });
   }
 
   /**
