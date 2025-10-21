@@ -1,0 +1,27 @@
+# Spec-Kit Agent Folders (may contain credentials/tokens)
+.claude/
+.specify/memory/agent-context.md
+
+# Node modules
+node_modules/
+
+# Environment variables
+.env
+.env.local
+.env.production
+
+# Build outputs
+dist/
+build/
+*.log
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~

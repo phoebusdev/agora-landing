@@ -132,28 +132,111 @@ nav {
 nav ul {
   display: flex;
   justify-content: center;
-  gap: var(--space-md);
+  gap: 0px;
   list-style: none;
   margin: 0;
   padding: 0;
   flex-wrap: wrap;
+  align-items: center;
 }
 
-nav a {
+/* Navigation Link Base Styling - Enhanced Magnification with Directional Parting */
+.nav-link {
+  /* Layout and positioning */
+  position: relative;
+  display: inline-block;
+
+  /* Remove all background and border styling */
+  background: none;
+  background-color: transparent;
+  border: none;
+  box-shadow: none;
+  outline: none; /* Will be added back for focus state only */
+
+  /* Typography */
   text-decoration: none;
-  padding: var(--space-sm);
-  color: var(--color-text-primary);
-  border-radius: var(--radius-sm);
-  transition: background-color var(--transition-hover);
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--color-gray-600);
+
+  /* Spacing - reduced for more compression */
+  padding: 4px 0px; /* Minimal vertical padding, no horizontal padding */
+  margin: 0px 12px; /* Reduced from 16px for tighter inactive spacing */
+  white-space: nowrap;
+
+  /* Enhanced magnification effect - more dramatic scale reduction */
+  transform: scale(0.88); /* Reduced from 0.95 to 0.88 for more compression */
+  transform-origin: center center;
+  opacity: 0.7; /* Reduced from 0.75 for more de-emphasis */
+
+  /* Animation - explicit properties for smooth transitions */
+  transition: transform 300ms cubic-bezier(0.4, 0.0, 0.2, 1),
+              opacity 300ms cubic-bezier(0.4, 0.0, 0.2, 1),
+              color 300ms cubic-bezier(0.4, 0.0, 0.2, 1),
+              margin 300ms cubic-bezier(0.4, 0.0, 0.2, 1),
+              font-weight 300ms cubic-bezier(0.4, 0.0, 0.2, 1);
+  will-change: transform, opacity;
+
+  /* Interaction */
+  cursor: pointer;
 }
 
-nav a:hover {
-  background-color: var(--color-bg-secondary);
+/* Directional translation for items before active - move left */
+.nav-link:has(~ .nav-link.active) {
+  transform: scale(0.88) translateX(-8px); /* Move 8px to the left, away from active */
 }
 
-nav a.active {
-  font-weight: var(--font-weight-bold);
-  background-color: var(--color-gray-200);
+/* Directional translation for items after active - move right */
+.nav-link.active ~ .nav-link {
+  transform: scale(0.88) translateX(8px); /* Move 8px to the right, away from active */
+}
+
+.nav-link:hover {
+  /* Subtle highlight - color and opacity only, no spatial changes */
+  color: var(--color-gray-900); /* Darker gray, not full black */
+  opacity: 0.85; /* Slight increase from 0.7, but not dramatic */
+
+  /* No backgrounds, borders, or spatial changes */
+  background: none;
+  background-color: transparent;
+  border: none;
+  box-shadow: none;
+  /* Inherits transform from base state - no hover-specific scaling or translation */
+}
+
+.nav-link.active {
+  /* Color and emphasis */
+  color: var(--color-black);
+  font-weight: 600;
+  opacity: 1.0;
+
+  /* Enhanced magnification effect - increased for more drama */
+  transform: scale(1.15) translateX(0px); /* Increased from 1.1, explicitly no translation */
+  margin: 0px 28px; /* Increased from 24px to claim more space */
+
+  /* Ensure no backgrounds appear on active state */
+  background: none;
+  background-color: transparent;
+  border: none;
+  box-shadow: none;
+}
+
+/* Remove any pseudo-elements that might create backgrounds */
+.nav-link::before,
+.nav-link::after {
+  display: none;
+  content: none;
+}
+
+/* Focus state for keyboard navigation accessibility */
+.nav-link:focus {
+  outline: 2px solid var(--color-black);
+  outline-offset: 4px;
+  border-radius: 2px;
+}
+
+.nav-link:focus:not(:focus-visible) {
+  outline: none;
 }
 
 main {
@@ -281,6 +364,59 @@ footer {
    Responsive Media Queries (Mobile-First)
    ============================================ */
 
+/* Mobile (max 768px) - Disable spatial effects, use color/weight only */
+@media (max-width: 768px) {
+  nav ul {
+    gap: 8px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .nav-link {
+    font-size: 12px;
+    margin: 0px 0px;
+    transform: scale(1.0) translateX(0px); /* No scale or translation on mobile */
+    padding: 6px 8px;
+
+    /* Ensure no backgrounds on mobile */
+    background: none;
+    background-color: transparent;
+    border: none;
+    box-shadow: none;
+  }
+
+  /* Disable all directional translation effects on mobile */
+  .nav-link:has(~ .nav-link.active),
+  .nav-link.active ~ .nav-link {
+    transform: scale(1.0) translateX(0px); /* Override all translation rules */
+  }
+
+  .nav-link.active {
+    transform: scale(1.0) translateX(0px); /* No spatial effects */
+    font-weight: 600;
+    margin: 0px 0px;
+    color: var(--color-black);
+
+    /* Ensure no backgrounds on mobile active state */
+    background: none;
+    background-color: transparent;
+    border: none;
+    box-shadow: none;
+  }
+
+  .nav-link:hover {
+    /* Subtle color change on mobile hover - same as desktop */
+    color: var(--color-gray-900);
+    opacity: 0.85;
+
+    /* Ensure no backgrounds on mobile hover */
+    background: none;
+    background-color: transparent;
+    border: none;
+    box-shadow: none;
+  }
+}
+
 /* Tablet (768px+) */
 @media (min-width: 768px) {
   h1 { font-size: var(--font-size-5xl); }
@@ -292,10 +428,6 @@ footer {
 
   .content-block.type-comparison {
     grid-template-columns: 1fr 1fr;
-  }
-
-  nav ul {
-    gap: var(--space-lg);
   }
 }
 

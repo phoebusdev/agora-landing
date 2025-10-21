@@ -10,6 +10,7 @@ This is a static HTML/CSS landing page implementing the Agora Design System Cons
 - Grayscale minimalist color palette
 - Shared design token system
 - Embedded interactive prototype
+- **Spec-Kit integration** for spec-driven development
 
 ## Features
 
